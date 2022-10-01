@@ -1,0 +1,408 @@
+<header>
+  <div class="contenedor-salir">
+    <button class="botonInfo" (click)="verInfo()">
+      Direccion <i class="fa-solid fa-user"></i>
+    </button>
+    <button class="cerrar-sesion">
+      Cerrar sesion <i class="fa-solid fa-power-off"></i>
+    </button>
+  </div>
+</header>
+
+<hr />
+
+<nav class="menu-list">
+  <div class="menu">
+    <button (click)="menuInicio()">
+      Inicio <i class="fa-solid fa-house"></i>
+    </button>
+    <button (click)="menuTurnar()">
+      Turnar <i class="fa-solid fa-share"></i>
+    </button>
+    <button (click)="menuGenerar()">
+      Generar Doc <i class="fa-solid fa-file-pen"></i>
+    </button>
+    <button (click)="menuVerDocs()">
+      Ver documentos <i class="fa-solid fa-magnifying-glass"></i>
+    </button>
+  </div>
+</nav>
+
+<!-- *************** INICIO ***************-->
+<div id="container-inicio" *ngIf="mostrarInicio">
+  <!-- OFICIOS EMITIDOS -->
+  <section id="contenedor-info">
+    <article class="contenedor-oficios">
+      <h3>Oficios emitidos por la secretaria particular:</h3>
+      <div class="oficios"></div>
+    </article>
+
+    <!-- ALMACENAR OFICIOS -->
+    <article class="contenedor-almacen">
+      <h3>Almacenar oficios</h3>
+      <div class="almacen">
+        <form id="almacen-oficios" name="almacen-oficios">
+          <div class="content-form1">
+            <!-- TIPO DE OFICIO -->
+            <label for="tipo-oficio">Selecciona el tipo de oficio:</label>
+            <select name="tipo-oficio" id="tipo-oficio">
+              <option value="internos">Internos</option>
+              <option value="externos">Externos</option>
+              <option value="circulares">Circulares</option>
+            </select>
+
+            <br />
+
+            <!-- NO. OFICIO -->
+            <label for="no-oficio" id="text-no-oficio">No. oficio:</label>
+            <input
+              type="number"
+              name="no-oficio"
+              id="no-oficio"
+              required="true"
+              placeholder="ejem. 20"
+            />
+
+            <img
+              src="https://michoacan.gob.mx/corry/logos/escudo-Gray.png"
+              alt="escudo"
+              class="escudo-sedeco"
+              width="200px"
+              height="200px"
+            />
+
+            <br />
+
+            <!-- FECHA -->
+            <label for="fecha" id="text-fecha">Fecha:</label>
+            <input type="date" id="fecha" name="fecha" required="true" />
+
+            <!-- ELEGIR UN DEPARTAMENTO -->
+            <label for="secretarias-almacen">Elija un departamento:</label>
+            <select name="secretarias-almacen" id="secretarias-almacen">
+              <option value="recursos-humanos">Recursos humanos</option>
+              <option value="recursos-financieros">Recursos financieros</option>
+              <option value="recursos-comerciales">Recursos materiales</option>
+              <option value="informatica">Informatica</option>
+            </select>
+
+            <label for="encargado">Encargado:</label>
+
+            <!-- AQUI IRA DINAMICAMENTE EL ENCARGADO -->
+            <br />
+
+            <!-- CARGAR ARCHIVO -->
+            <label for="subir-archivo">Cargar archivo:</label>
+            <input
+              name="subir-archivo"
+              id="subir-archivo"
+              type="file"
+              placeholder="Archivo"
+            />
+          </div>
+
+          <button class="btn-cargar" type="submit">
+            Cargar <i class="fa-solid fa-floppy-disk"></i>
+          </button>
+        </form>
+      </div>
+    </article>
+  </section>
+</div>
+
+<!-- *************** TURNAR ***************-->
+<div id="container-turn" *ngIf="mostrarTurnar">
+  <section id="turnar-documentos">
+    <div class="contenedor-turnar-documentos">
+      <h1>Turnar Documentos</h1>
+      <div class="contenedor-turnar-documentos2">
+        <!-- ELEGIR EL DOCUMENTO -->
+        <h2>Elige un documento</h2>
+        <div class="doc">
+          <p>Aqui iran todos los documentos</p>
+        </div>
+
+        <br />
+
+        <form id="turnar-oficios" name="turnar-oficios">
+          <div class="contenedor-form-turnar">
+            <!-- DIRECCION -->
+            <label for="departamentos">Elija la direccion:</label>
+            <select name="departamentos" id="departamentos">
+              <option value="recursos-humanos">Recursos humanos</option>
+              <option value="recursos-financieros">Recursos financieros</option>
+              <option value="recursos-comerciales">Recursos materiales</option>
+              <option value="informatica">Informatica</option>
+            </select>
+
+            <!-- TIPO DE OFICIO -->
+            <label for="tipo-oficio">Selecciona el tipo de oficio:</label>
+            <select name="tipo-oficio" id="tipo-oficio">
+              <option value="internos">Internos</option>
+              <option value="externos">Externos</option>
+              <option value="circulares">Circulares</option>
+            </select>
+
+            <br />
+            <br />
+
+            <!-- CARGAR ARCHIVO -->
+            <label for="subir-archivo" class="cargar-archivo"
+              >Cargar archivo:</label
+            >
+            <input name="subir-archivo" id="subir-archivo" type="file" />
+          </div>
+
+          <!-- BOTON TURNAR -->
+          <button type="submit" class="btn-turnar">
+            Turnar <i class="fa-solid fa-share-nodes"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- *************** GENERAR DOC ***************-->
+<div *ngIf="mostrarGenerar">
+  <section id="container-generar-doc">
+    <div class="contenedor-doc">
+      <h2>Generar documento</h2>
+      <form id="generar-oficios" name="generar-oficios">
+        <!-- TIPO DE OFICIO -->
+        <label for="tipo-oficio">Selecciona el tipo de oficio:</label>
+        <select name="tipo-oficio" id="tipo-oficio">
+          <option value="internos">Internos</option>
+          <option value="externos">Externos</option>
+          <option value="circulares">Circulares</option>
+        </select>
+
+        <!-- PLANTILLAS -->
+        <div class="plantillas"></div>
+
+        <!-- BOTONES GUARDAR Y DESHACER CAMBIOS -->
+        <button type="submit" class="button-doc-deshacer">
+          Deshacer Cambios
+        </button>
+        <button type="submit" class="button-doc-save">Guardar</button>
+      </form>
+    </div>
+  </section>
+</div>
+
+<!-- *************** VER DOCS ***************-->
+<div *ngIf="mostrarVerDocs">
+  <section id="container-ver-docs">
+    <div class="container-ver-docs">
+      <form class="buscar" id="buscar">
+        <input type="search" class="search" placeholder="Buscar" />
+      </form>
+
+      <table>
+        <caption>
+          <h2>Documentos</h2>
+        </caption>
+        <tr>
+          <th>No. de oficio</th>
+          <th>Fecha</th>
+          <th>Encargado</th>
+          <th>Departamento</th>
+          <th>Documento</th>
+        </tr>
+        <tr>
+          <td>49</td>
+          <td>22/11/2022</td>
+          <td>Ing. Ramiro Ramirez Abarca</td>
+          <td>Informatica</td>
+          <td>
+            <a href="docs/Solicitud 250 correos Finanzas.pdf" target="_blank"
+              >documento1.pdf</a
+            >
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+
+      <br />
+
+      <!-- GUARDAR DOCUMENTACION DEL ANIO -->
+      <form id="guardar-docAnual" name="guardar-docAnual">
+        <button type="submit">Guardar Documentacion del año</button>
+
+        <label for="confirm">Confirmar</label>
+        <input type="checkbox" id="confirm" name="confirm" value="documents" />
+      </form>
+
+      <br />
+      <!-- Botones editar y borrar -->
+      <form id="editar-borrar" name="editar-borrar">
+        <input type="submit" value="Borrar" />
+        <input type="submit" value="Editar" />
+
+        <!-- TIPO DE OFICIO -->
+        <label for="tipo-oficio">Selecciona el tipo de oficio para ver:</label>
+        <select name="tipo-oficio" id="tipo-oficio">
+          <option value="internos">Internos</option>
+          <option value="externos">Externos</option>
+          <option value="circulares">Circulares</option>
+        </select>
+      </form>
+
+      <br />
+
+      <button (click)="verDocsA()">Ver documentos anuales</button>
+    </div>
+  </section>
+</div>
+
+<!-- *************** VER DOCS ANUALES ***************-->
+<div *ngIf="mostrarDocsAnuales">
+  <section id="container-ver-docs">
+    <div class="container-ver-docs">
+      <form class="buscar" id="buscar" name="buscar">
+        <input type="search" class="search" placeholder="Buscar" />
+      </form>
+
+      <table>
+        <caption>
+          <h2>Documentaciones guardadas por cada año</h2>
+        </caption>
+        <tr>
+          <th>No. de oficio</th>
+          <th>Fecha</th>
+          <th>Encargado</th>
+          <th>Departamento</th>
+          <th>Documento</th>
+        </tr>
+        <tr>
+          <td>49</td>
+          <td>22/11/2022</td>
+          <td>Ing. Ramiro Ramirez Abarca</td>
+          <td>Informatica</td>
+          <td>
+            <a href="docs/Solicitud 250 correos Finanzas.pdf">documento1.pdf</a>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+  </section>
+</div>
+
+<!-- *************** INFORMACION ***************-->
+<div id="info" *ngIf="mostrarInfo">
+  <section>
+    <div class="container-info">
+      <h2>Direccion</h2>
+
+      <form id="info-depto" name="info-depto">
+        <div class="container-form-info">
+          <div class="container-infouno">
+            <div class="correo">
+              <label for="correo">Correo electronico:</label>
+              <input
+                name="correo"
+                id="correo"
+                type="text"
+                value="direccion@sedeco.gob.mx"
+              />
+            </div>
+            <div class="container-labels">
+              <label for="encargado">Encargado:</label>
+              <input
+                name="encargado"
+                id="encargado"
+                type="text"
+                value="Lic. Mariana"
+              />
+            </div>
+          </div>
+
+          <br />
+
+          <div class="container-infodos">
+            <label for="password">Contraseña:</label>
+            <input
+              name="password"
+              id="password"
+              type="password"
+              value="4563363522"
+            />
+            <div class="container-labels">
+              <div class="user">
+                <label for="usuario">Usuario:</label>
+                <input
+                  name="usuario"
+                  id="usuario"
+                  type="text"
+                  value="Direccion"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container-2">
+          <button class="btn-edit-info" type="submit">
+            Editar <i class="fa-solid fa-pen-to-square"></i>
+          </button>
+
+          <button class="btn-save-info" type="submit">
+            Guardar <i class="fa-solid fa-floppy-disk"></i>
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <hr />
+  <img
+    src="https://michoacan.gob.mx/corry/logos/sub/sedeco.png"
+    alt="SEDECO"
+    width="200px"
+    height="90px"
+  />
+  <h5>SECRETARIA DE DESARROLLO ECONOMICO</h5>
+</footer>
