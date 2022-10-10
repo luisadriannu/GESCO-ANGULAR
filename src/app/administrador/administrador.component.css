@@ -25,18 +25,16 @@
 }
 
 .title-inicio {
-  position: relative;
-  left: 4%;
-  width: 30%;
+  text-align: center;
 }
 .contenedor-altasDepto {
   padding: 20px;
-  height: 500px;
+  height: 400px;
   position: relative;
 }
 .contenedor-altasDepto2 {
-  width: 90%;
-  height: 400px;
+  width: 70%;
+  height: 500px;
   padding: 15px;
   overflow: auto;
   margin: auto;
@@ -91,8 +89,8 @@
 /* ESTILOS ADMISTRADOR */
 .escudo-sedeco-admin {
   position: absolute;
-  left: 73%;
-  bottom: 230px;
+  left: 68%;
+  bottom: 445px;
 }
 .btn-admin-guardar {
   margin: 15px;
@@ -103,8 +101,8 @@
   height: 45px;
   cursor: pointer;
   position: relative;
-  left: 45%;
-  bottom: 75px;
+  top: 15px;
+  left: 40%;
 }
 .btn-admin-guardar:hover {
   background-color: white;
@@ -151,28 +149,76 @@ caption {
 .container-2 {
   padding: 15px;
 }
-
-.btn-edit {
-  margin: 15px;
-  background-color: #4a001f;
-  color: white;
-  border-radius: 5px;
-  width: 18%;
-  height: 45px;
-  cursor: pointer;
+#depto {
   position: relative;
-  bottom: 15%;
 }
-.btn-save {
-  margin: 15px;
-  background-color: #4a001f;
-  color: white;
-  border-radius: 5px;
-  width: 18%;
-  height: 45px;
+.btn-edit-depto {
   cursor: pointer;
+  position: absolute;
+  bottom: 60px;
+  left: 92%;
+}
+.btn-save-depto {
+  cursor: pointer;
+  position: absolute;
+  left: 82%;
+}
+
+.btn-save-subdirec {
+  cursor: pointer;
+  position: absolute;
+  left: 82%;
+}
+.btn-edit-subdirec {
+  cursor: pointer;
+  position: absolute;
+  bottom: 60px;
+  left: 92%;
+}
+#subdirec {
   position: relative;
-  bottom: 15%;
+}
+.btn-save-direc {
+  cursor: pointer;
+  position: absolute;
+  left: 82%;
+}
+.btn-edit-direc {
+  cursor: pointer;
+  position: absolute;
+  bottom: 60px;
+  left: 92%;
+}
+#direc {
+  position: relative;
+}
+.btn-save-subsecret {
+  cursor: pointer;
+  position: absolute;
+  left: 82%;
+}
+.btn-edit-subsecret {
+  cursor: pointer;
+  position: absolute;
+  bottom: 60px;
+  left: 92%;
+}
+#subsecret {
+  position: relative;
+}
+.btn-save-secret {
+  cursor: pointer;
+  position: absolute;
+  left: 82%;
+}
+.btn-edit-secret {
+  cursor: pointer;
+  position: absolute;
+  bottom: 60px;
+  left: 92%;
+}
+#secret {
+  position: relative;
 }
 .btn-edit-admin {
   margin: 15px;
@@ -207,19 +253,6 @@ caption {
   color: black;
 }
 
-.btn-edit:hover {
-  background-color: white;
-  transition: 0.4s;
-  border: 1px solid #4a001f;
-  color: black;
-}
-.btn-save:hover {
-  background-color: white;
-  transition: 0.4s;
-  border: 1px solid #4a001f;
-  color: black;
-}
-
 .container-labels {
   display: inline;
   position: relative;
@@ -241,4 +274,18 @@ caption {
   margin: auto;
   position: relative;
   right: 2.5%;
+}
+.container-fila input {
+  width: 70%;
+}
+#opc-datos {
+  width: 50%;
+}
+.contenedor-registro {
+  background-color: white;
+  text-align: center;
+  width: 80%;
+  height: 300px;
+  margin: auto;
+  overflow: auto;
 }

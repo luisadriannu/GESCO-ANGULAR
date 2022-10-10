@@ -93,7 +93,7 @@
   height: 45px;
   cursor: pointer;
   position: relative;
-  left: 71%;
+  left: 72%;
   bottom: 10px;
 }
 .btn-cargar:hover {
@@ -111,8 +111,8 @@
 }
 .escudo-sedeco {
   position: absolute;
-  bottom: 14%;
-  left: 66%;
+  bottom: 30%;
+  left: 68%;
 }
 .escudo-sedecoSP {
   position: absolute;

@@ -7,74 +7,47 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdministradorComponent implements OnInit {
   mostrarInicio = true;
-  mostrarSecre = false;
-  mostrarSubsecr = false;
+  mostrarSecret = false;
+  mostrarSubsecre = false;
   mostrarDirec = false;
   mostrarSubdirec = false;
-  mostrarDepto = false;
+  mostrarDeptos = false;
   mostrarInfo = false;
+
+  mostrarSecretReg = false;
+
+  registroSecret() {
+    this.mostrarInicio = false;
+    this.mostrarSecretReg = true;
+  }
 
   menuInicio() {
     this.mostrarInicio = true;
-    this.mostrarSecre = false;
-    this.mostrarSubsecr = false;
+    this.mostrarSecret = false;
+    this.mostrarSubsecre = false;
     this.mostrarDirec = false;
     this.mostrarSubdirec = false;
-    this.mostrarDepto = false;
+    this.mostrarDeptos = false;
     this.mostrarInfo = false;
+
+    this.mostrarSecretReg = false;
   }
-  menuSecre() {
+  menuDeptos() {
     this.mostrarInicio = false;
-    this.mostrarSecre = true;
-    this.mostrarSubsecr = false;
-    this.mostrarDirec = false;
-    this.mostrarSubdirec = false;
-    this.mostrarDepto = false;
-    this.mostrarInfo = false;
-  }
-  menuSubsecr() {
-    this.mostrarInicio = false;
-    this.mostrarSecre = false;
-    this.mostrarSubsecr = true;
-    this.mostrarDirec = false;
-    this.mostrarSubdirec = false;
-    this.mostrarDepto = false;
-    this.mostrarInfo = false;
-  }
-  menuDirec() {
-    this.mostrarInicio = false;
-    this.mostrarSecre = false;
-    this.mostrarSubsecr = false;
+    this.mostrarSecret = true;
+    this.mostrarSubsecre = true;
     this.mostrarDirec = true;
-    this.mostrarSubdirec = false;
-    this.mostrarDepto = false;
-    this.mostrarInfo = false;
-  }
-  menuSubdirec() {
-    this.mostrarInicio = false;
-    this.mostrarSecre = false;
-    this.mostrarSubsecr = false;
-    this.mostrarDirec = false;
     this.mostrarSubdirec = true;
-    this.mostrarDepto = false;
-    this.mostrarInfo = false;
-  }
-  menuDepto() {
-    this.mostrarInicio = false;
-    this.mostrarSecre = false;
-    this.mostrarSubsecr = false;
-    this.mostrarDirec = false;
-    this.mostrarSubdirec = false;
-    this.mostrarDepto = true;
+    this.mostrarDeptos = true;
     this.mostrarInfo = false;
   }
   menuInfo() {
     this.mostrarInicio = false;
-    this.mostrarSecre = false;
-    this.mostrarSubsecr = false;
+    this.mostrarSecret = false;
+    this.mostrarSubsecre = false;
     this.mostrarDirec = false;
     this.mostrarSubdirec = false;
-    this.mostrarDepto = false;
+    this.mostrarDeptos = false;
     this.mostrarInfo = true;
   }
   constructor() {}

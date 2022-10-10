@@ -16,170 +16,109 @@
     <button (click)="menuInicio()">
       Inicio <i class="fa-solid fa-house"></i>
     </button>
-    <button (click)="menuSecre()">
-      Secretarias <i class="fa-solid fa-building"></i>
-    </button>
-    <button (click)="menuSubsecr()">
-      Subsecretarias <i class="fa-solid fa-stapler"></i>
-    </button>
-    <button (click)="menuDirec()">
-      Direcciones <i class="fa-solid fa-print"></i>
-    </button>
-    <button (click)="menuSubdirec()">
-      Subdirecciones <i class="fa-solid fa-briefcase"></i>
-    </button>
-    <button (click)="menuDepto()">
-      Departamentos <i class="fa-solid fa-folder"></i>
+    <button (click)="menuDeptos()">
+      Organigrama <i class="fa-solid fa-sitemap"></i>
     </button>
   </div>
 </nav>
 
+<br />
+<br />
 <!-- *************** INICIO ***************-->
 <!-- FORMULARIO -->
 <div id="container-inicio" *ngIf="mostrarInicio">
+  <div class="contenedor-registro">
+    <h3>Realizar registro</h3>
+    <button (click)="registroSecret()">Secretario</button>
+    <button>Secretaría</button>
+    <button>Subsecretaría</button>
+    <br />
+    <button>Dirección</button>
+    <button>Subdirección</button>
+    <button>Departamento</button>
+  </div>
+</div>
+
+<!-- **********MENU REGISTRO SECRETARIO********** -->
+<div *ngIf="mostrarSecretReg">
   <section id="contenedor-info">
-    <div class="contenedor-altasDepto">
-      <h4 class="title-inicio">Agregar nuevo departamento</h4>
-      <div class="contenedor-altasDepto2">
-        <form id="add-depto" name="add-depto">
-          <div class="container-filauno">
-            <label for="nombre-depto">Nombre del departamento:</label>
-            <input
-              type="text"
-              id="nombre-depto"
-              name="nombre-depto"
-              placeholder="Escribe el nombre"
-              required="true"
-            />
-            <div class="container-labels">
-              <label for="nombre-encargado">Nombre del encargado:</label>
-              <input
-                type="text"
-                id="nombre-encargado"
-                name="nombre-encargado"
-                placeholder="Escribe el nombre"
-                required="true"
-              />
-            </div>
-          </div>
+    <div class="contenedor-altasDepto2">
+      <h2 class="title-inicio">Realizar registro</h2>
+      <form id="add-depto" name="add-depto">
+        <div class="container-fila">
+          <label for="nombre-depto">Nombre:</label>
+          <input
+            type="text"
+            id="nombre-depto"
+            name="nombre-depto"
+            placeholder="Escribe el nombre"
+            required="true"
+          />
+        </div>
+        <br />
+        <div class="container-fila">
+          <label for="nombre-encargado">Responsable:</label>
+          <input
+            type="text"
+            id="nombre-encargado"
+            name="nombre-encargado"
+            placeholder="Escribe el nombre"
+            required="true"
+          />
+        </div>
+        <br />
+        <div class="container-fila">
+          <label for="correo">Correo electronico:</label>
+          <input
+            type="text"
+            id="correo"
+            name="correo"
+            placeholder="Escribe el correo"
+            required="true"
+          />
+        </div>
+        <br />
+        <div class="container-fila">
+          <label for="asig-contrasenia">Contraseña:</label>
+          <input
+            type="password"
+            id="asig-contrasenia"
+            name="asig-contrasenia"
+            placeholder="Escribe la contraseña"
+            required="true"
+          />
+        </div>
+        <br />
+        <div class="container-fila">
+          <label for="confirm-contrasenia">Confirmar contraseña:</label>
+          <input
+            type="password"
+            id="confirm-contrasenia"
+            name="confirm-contrasenia"
+            placeholder="Escribe la contraseña"
+            required="true"
+          />
+        </div>
 
-          <br />
-          <br />
-
-          <div class="container-filados">
-            <label for="correo">Correo electronico:</label>
-            <input
-              type="text"
-              id="correo"
-              name="correo"
-              placeholder="Escribe el correo"
-              required="true"
-            />
-            <div class="container-labels">
-              <label for="asig-contrasenia">Contraseña:</label>
-              <input
-                type="password"
-                id="asig-contrasenia"
-                name="asig-contrasenia"
-                placeholder="Escribe la contraseña"
-                required="true"
-              />
-            </div>
-          </div>
-          <br />
-          <br />
-          <!-- SUBDIRECCION -->
-          <div class="container-filatres">
-            <label for="opc-subdireccion"
-              >Subdireccion en la que se encontrara:</label
-            >
-            <select name="opc-subdireccion" id="opc-subdireccion">
-              <option value="Inversiones estrategicas">
-                Inversiones estrategicas
-              </option>
-              <option value="Propocion de empleo">Propocion de empleo</option>
-            </select>
-            <div class="container-labels">
-              <label for="check-subdirec">No tiene subdireccion</label>
-              <input
-                type="checkbox"
-                id="check-subdirec"
-                name="check-subdirec"
-              />
-            </div>
-          </div>
-
-          <br />
-          <br />
-
-          <!-- DIRECCION -->
-          <div class="container-filacuadro">
-            <label for="opc-direccion"
-              >Direccion en la que se encontrara:</label
-            >
-            <select name="opc-direccion" id="opc-direccion">
-              <option value="delegacionAdmin">Delegacion administrativa</option>
-              <option value="mejoraRegu">Mejora regulatoria</option>
-              <option value="gestionFonProyec">
-                Gestion de fondos de proyectos
-              </option>
-              <option value="desarrEmpre">
-                Desarrollo empresarial y economia social
-              </option>
-            </select>
-          </div>
-
-          <br />
-          <br />
-          <!-- SUBSECRETARIA -->
-          <div class="container-filacinco">
-            <label for="opc-subsecretaria"
-              >Subsecretaria en la que se encontrara:</label
-            >
-            <select name="opc-subsecretaria" id="opc-subsecretaria">
-              <option value="trabajPrevision">
-                De trabajo y prevision social
-              </option>
-              <option value="comerTMEC">
-                De comercio internacional (TMEC)
-              </option>
-            </select>
-            <div class="container-labels">
-              <label for="check-sub">No tiene subsecretaria</label>
-              <input type="checkbox" id="check-sub" name="check-sub" />
-            </div>
-          </div>
-
-          <br />
-          <br />
-          <!-- DEPARTAMENTOS -->
-          <label for="opc-datos">Elija que quiera dar de alta:</label>
-          <select name="opc-datos" id="opc-datos">
-            <option value="secretaria">Secretaria</option>
-            <option value="subsecretaria">Subsecretaria</option>
-            <option value="direccion">Direccion</option>
-            <option value="subdireccion">Subdireccion</option>
-            <option value="departamento">Departamento</option>
-          </select>
-          <!-- GUARDAR -->
-          <button type="submit" class="btn-admin-guardar">
-            Guardar <i class="fa-solid fa-floppy-disk"></i>
-          </button>
-        </form>
-        <img
-          class="escudo-sedeco-admin"
-          src="https://michoacan.gob.mx/corry/logos/escudo-Gray.png"
-          alt="SEDECO"
-          width="200px"
-          height="200px"
-        />
-      </div>
+        <!-- GUARDAR -->
+        <button type="submit" class="btn-admin-guardar">
+          Guardar <i class="fa-solid fa-floppy-disk"></i>
+        </button>
+      </form>
+      <img
+        class="escudo-sedeco-admin"
+        src="https://michoacan.gob.mx/corry/logos/escudo-Gray.png"
+        alt="SEDECO"
+        width="180px"
+        height="180px"
+      />
     </div>
   </section>
 </div>
 
+<!-- ORGANIGRAMA -->
 <!-- *************** SECRETARIAS ***************-->
-<div id="secret" *ngIf="mostrarSecre">
+<div id="secret" *ngIf="mostrarSecret">
   <section id="container-ver-docs">
     <div class="container-ver-docs">
       <form class="buscar" id="buscar" name="buscar">
@@ -191,9 +130,9 @@
           <h2>Datos de todas las Secretarias</h2>
         </caption>
         <tr>
-          <th>Nombre de la secretaria</th>
-          <th>Nombre del encargado</th>
-          <th>Correo del encargado</th>
+          <th>Nombre</th>
+          <th>Titular</th>
+          <th>Correo electronico</th>
           <th>Contraseña</th>
         </tr>
         <tr>
@@ -222,33 +161,28 @@
         </tr>
       </table>
       <br />
-      <button class="btn-edit" type="submit">
+      <button class="btn-edit-secret" type="submit">
         Editar <i class="fa-solid fa-pen-to-square"></i>
       </button>
-
-      <button class="btn-save" type="submit">
-        Guardar <i class="fa-solid fa-floppy-disk"></i>
+      <button class="btn-borrar-secret" type="submit">
+        Borrar <i class="fa-solid fa-trash"></i>
       </button>
     </div>
   </section>
 </div>
-
+<br />
 <!-- *************** SUBSECRETARIAS ***************-->
-<div id="subsecret" *ngIf="mostrarSubsecr">
+<div id="subsecret" *ngIf="mostrarSubsecre">
   <section id="container-ver-docs">
     <div class="container-ver-docs">
-      <form class="buscar" id="buscar" name="buscar">
-        <input type="search" class="search" placeholder="Buscar" />
-      </form>
-
       <table>
         <caption>
           <h2>Datos de todas las Subsecretarias</h2>
         </caption>
         <tr>
-          <th>Nombre de la secretaria</th>
-          <th>Nombre del encargado</th>
-          <th>Correo del encargado</th>
+          <th>Nombre</th>
+          <th>Titular</th>
+          <th>Correo electronico</th>
           <th>Contraseña</th>
         </tr>
         <tr>
@@ -277,33 +211,28 @@
         </tr>
       </table>
       <br />
-      <button class="btn-edit" type="submit">
+      <button class="btn-edit-subsecret" type="submit">
         Editar <i class="fa-solid fa-pen-to-square"></i>
       </button>
-
-      <button class="btn-save" type="submit">
-        Guardar <i class="fa-solid fa-floppy-disk"></i>
+      <button class="btn-borrar-secret" type="submit">
+        Borrar <i class="fa-solid fa-trash"></i>
       </button>
     </div>
   </section>
 </div>
-
+<br />
 <!-- *************** DIRECCIONES ***************-->
 <div id="direc" *ngIf="mostrarDirec">
   <section id="container-ver-docs">
     <div class="container-ver-docs">
-      <form class="buscar" id="buscar" name="buscar">
-        <input type="search" class="search" placeholder="Buscar" />
-      </form>
-
       <table>
         <caption>
           <h2>Datos de todas las Direcciones</h2>
         </caption>
         <tr>
-          <th>Nombre de la secretaria</th>
-          <th>Nombre del encargado</th>
-          <th>Correo del encargado</th>
+          <th>Nombre</th>
+          <th>Titular</th>
+          <th>Correo electronico</th>
           <th>Contraseña</th>
         </tr>
         <tr>
@@ -332,33 +261,28 @@
         </tr>
       </table>
       <br />
-      <button class="btn-edit" type="submit">
+      <button class="btn-edit-direc" type="submit">
         Editar <i class="fa-solid fa-pen-to-square"></i>
       </button>
-
-      <button class="btn-save" type="submit">
-        Guardar <i class="fa-solid fa-floppy-disk"></i>
+      <button class="btn-borrar-secret" type="submit">
+        Borrar <i class="fa-solid fa-trash"></i>
       </button>
     </div>
   </section>
 </div>
-
+<br />
 <!-- *************** SUBDIRECCIONES ***************-->
 <div id="subdirec" *ngIf="mostrarSubdirec">
   <section id="container-ver-docs">
     <div class="container-ver-docs">
-      <form class="buscar" id="buscar" name="buscar">
-        <input type="search" class="search" placeholder="Buscar" />
-      </form>
-
       <table>
         <caption>
           <h2>Datos de todas las Subdirecciones</h2>
         </caption>
         <tr>
-          <th>Nombre de la secretaria</th>
-          <th>Nombre del encargado</th>
-          <th>Correo del encargado</th>
+          <th>Nombre</th>
+          <th>Titular</th>
+          <th>Correo electronico</th>
           <th>Contraseña</th>
         </tr>
         <tr>
@@ -387,33 +311,28 @@
         </tr>
       </table>
       <br />
-      <button class="btn-edit" type="submit">
+      <button class="btn-edit-subdirec" type="submit">
         Editar <i class="fa-solid fa-pen-to-square"></i>
       </button>
-
-      <button class="btn-save" type="submit">
-        Guardar <i class="fa-solid fa-floppy-disk"></i>
+      <button class="btn-borrar-secret" type="submit">
+        Borrar <i class="fa-solid fa-trash"></i>
       </button>
     </div>
   </section>
 </div>
-
+<br />
 <!-- *************** DEPARTAMENTOS ***************-->
-<div id="depto" *ngIf="mostrarDepto">
+<div id="depto" *ngIf="mostrarDeptos">
   <section id="container-ver-docs">
     <div class="container-ver-docs">
-      <form class="buscar" id="buscar" name="buscar">
-        <input type="search" class="search" placeholder="Buscar" />
-      </form>
-
       <table>
         <caption>
           <h2>Datos de todas los Departamentos</h2>
         </caption>
         <tr>
-          <th>Nombre de la secretaria</th>
-          <th>Nombre del encargado</th>
-          <th>Correo del encargado</th>
+          <th>Nombre</th>
+          <th>Titular</th>
+          <th>Correo electronico</th>
           <th>Contraseña</th>
         </tr>
         <tr>
@@ -442,12 +361,11 @@
         </tr>
       </table>
       <br />
-      <button class="btn-edit" type="submit">
+      <button class="btn-edit-depto" type="submit">
         Editar <i class="fa-solid fa-pen-to-square"></i>
       </button>
-
-      <button class="btn-save" type="submit">
-        Guardar <i class="fa-solid fa-floppy-disk"></i>
+      <button class="btn-borrar-secret" type="submit">
+        Borrar <i class="fa-solid fa-trash"></i>
       </button>
     </div>
   </section>
