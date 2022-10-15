@@ -1,0 +1,69 @@
+:root {
+  --colorMain: #d3d3d3;
+}
+
+.container-login {
+  position: relative;
+  margin: 10px;
+  border-radius: 10px;
+  width: 70%;
+  left: 15%;
+  text-align: center;
+}
+.container-login hr {
+  width: 90%;
+}
+.container-inputs {
+  background-color: white;
+  border-radius: 10px;
+  padding: 25px;
+  width: 60%;
+  position: relative;
+  left: 18%;
+}
+#usuario {
+  padding: 5px 0;
+  margin: 15px;
+  display: block;
+  background: transparent;
+  width: 93%;
+  border: none;
+  border-bottom: 1px solid black;
+}
+#password {
+  padding: 5px 0;
+  margin: 15px;
+  display: block;
+  background: transparent;
+  width: 93%;
+  border: none;
+  border-bottom: 1px solid black;
+}
+.container-login .container-inputs .elemento input[type="submit"] {
+  margin: 15px;
+  padding: 15px;
+  border: none;
+  width: 50%;
+  background-color: #4a001f;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+.container-login .container-inputs .elemento input[placeholder] {
+  color: white;
+}
+.container-login .container-inputs .elemento input[type="submit"]:hover {
+  background-color: white;
+  transition: 0.4s;
+  border: 1px solid #4a001f;
+  color: black;
+}
+
+.footer {
+  position: relative;
+  text-align: center;
+  top: 45px;
+  width: 100%;
+  overflow: auto;
+  margin: auto;
+}

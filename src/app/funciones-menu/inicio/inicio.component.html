@@ -1,0 +1,102 @@
+<!-- *************** INICIO ***************-->
+<!-- OFICIOS EMITIDOS -->
+<div class="container my-4">
+  <div class="row">
+    <!-- <article>
+      <h4>Oficios emitidos:</h4>
+    </article> -->
+
+    <!-- ALMACENAR OFICIOS -->
+    <h3>Almacenar oficios</h3>
+    <form action="almacenar-oficios">
+      <!-- COL 1 -->
+      <div class="row">
+        <div class="col">
+          <select name="tipo-oficio" class="form-control">
+            <option value="#">Selecciona el tipo de oficio:</option>
+            <option value="internos">Internos</option>
+            <option value="externos">Externos</option>
+            <option value="circulares">Circulares</option>
+          </select>
+        </div>
+        <div class="col">
+          <input
+            name="dependencia"
+            type="text"
+            class="form-control"
+            placeholder="Dependencia:"
+            maxlength="50"
+            required
+          />
+        </div>
+      </div>
+      <br />
+      <!-- COL 2 -->
+
+      <div class="row">
+        <div class="col">
+          <input
+            name="sub-dependencia"
+            type="text"
+            class="form-control"
+            placeholder="Sub-dependencia:"
+            maxlength="50"
+            required
+          />
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Oficina:" />
+        </div>
+      </div>
+      <br />
+      <!-- COL 3 -->
+      <div class="row">
+        <div class="col">
+          <input
+            name="no-oficio"
+            type="text"
+            class="form-control"
+            placeholder="No. Oficio:"
+            maxlength="40"
+            required
+          />
+        </div>
+        <div class="col">
+          <input
+            name="asunto"
+            type="text"
+            class="form-control"
+            placeholder="Asunto:"
+            maxlength="50"
+            required
+          />
+        </div>
+      </div>
+      <br />
+      <!-- COL 4 -->
+      <div class="row">
+        <div class="col">
+          <input
+            type="text"
+            name="fecha-recibido"
+            class="form-control"
+            placeholder="Fecha de recibido"
+            maxlength="50"
+            required
+          />
+        </div>
+        <div class="col">
+          <input type="file" class="form-control" />
+        </div>
+
+        <button
+          type="submit"
+          class="btn btn-lg btn-block my-4"
+          style="background-color: #4a001f; color: white"
+        >
+          Guardar <i class="fa-solid fa-floppy-disk"></i>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

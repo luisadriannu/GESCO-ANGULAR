@@ -1,0 +1,579 @@
+<!-- ORGANIGRAMA -->
+<!-- ********** Editar usuario **********-->
+<div *ngIf="editUsuario">
+  <div class="container col-md-4 registro-flotante">
+    <button
+      (click)="cerrar()"
+      class="btn btn-sm btn-block my-4 btn-cerrar"
+      style="background-color: #4a001f; color: white"
+    >
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+
+    <!-- ********** Editar usuario **********-->
+    <h2 class="title-inicio" style="text-align: center">
+      Editar el usuario: (usuario)
+    </h2>
+    <form action="edit-usuario-org">
+      <br />
+      <label for="nombre-depto">Nombre del departamento:</label>
+      <div class="col">
+        <input
+          name="nombre-depto"
+          type="text"
+          class="form-control"
+          value="Datos del usuario nombre del depto"
+          maxlength="50"
+        />
+      </div>
+      <br />
+      <div class="col">
+        <label for="nombre-encargado">Responsable:</label>
+        <input
+          name="nombre-encargado"
+          type="text"
+          class="form-control"
+          value="Datos del usuario nombre del responsable"
+          maxlength="50"
+        />
+      </div>
+
+      <br />
+      <div class="col">
+        <label for="correo">Correo electrónico:</label>
+        <input
+          name="correo"
+          type="text"
+          class="form-control"
+          value="Datos del usuario correo electronico"
+          maxlength="40"
+        />
+      </div>
+
+      <br />
+      <div class="col">
+        <label for="password">Contraseña:</label>
+        <input
+          name="password"
+          type="text"
+          class="form-control"
+          value="Datos del usuario contraseña"
+          maxlength="20"
+        />
+      </div>
+      <br />
+
+      <div class="row">
+        <button
+          type="submit"
+          class="btn btn-lg btn-block my-4"
+          style="background-color: #4a001f; color: white"
+        >
+          Guardar cambios <i class="fa-solid fa-floppy-disk"></i>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- *************** SECRETARIAS ***************-->
+<div class="container">
+  <section id="container-ver-docs">
+    <div class="container-ver-docs">
+      <div class="input-group rounded">
+        <input
+          type="search"
+          class="form-control rounded"
+          placeholder="Buscar"
+          aria-label="Search"
+          aria-describedby="search-addon"
+        />
+        <span class="input-group-text border-0" id="search-addon">
+          <i class="fas fa-search"></i>
+        </span>
+      </div>
+
+      <!-- DATOS DE TODAS LAS SECRETARIAS -->
+      <h3 class="mt-4">Datos de todas las Secretarias</h3>
+      <table class="table table-light my-4">
+        <thead>
+          <tr>
+            <th scope="col">No.</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Titular</th>
+            <th scope="col">Correo electrónico</th>
+            <th scope="col">Contraseña</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Secretaria tecnica</td>
+            <td>Ing. Mariana Juarez</td>
+            <td>mariana@sedeco.michoacan.gob.mx</td>
+            <td>*********</td>
+            <button
+              (click)="editarUsuario()"
+              class="btn btn-success btn-sm"
+              style="background-color: green"
+            >
+              <i class="fa-solid fa-pen-to-square"></i>
+            </button>
+            <button
+              type="submit"
+              class="btn btn-danger btn-sm mx-1"
+              style="background-color: red"
+            >
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Secretaria tecnica</td>
+            <td>Ing. Mariana Juarez</td>
+            <td>mariana@sedeco.michoacan.gob.mx</td>
+            <td>*********</td>
+            <button
+              class="btn btn-success btn-sm"
+              style="background-color: green"
+            >
+              <i class="fa-solid fa-pen-to-square"></i>
+            </button>
+            <button
+              type="submit"
+              class="btn btn-danger btn-sm mx-1"
+              style="background-color: red"
+            >
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Secretaria tecnica</td>
+            <td>Ing. Mariana Juarez</td>
+            <td>mariana@sedeco.michoacan.gob.mx</td>
+            <td>*********</td>
+            <button
+              class="btn btn-success btn-sm"
+              style="background-color: green"
+            >
+              <i class="fa-solid fa-pen-to-square"></i>
+            </button>
+            <button
+              type="submit"
+              class="btn btn-danger btn-sm mx-1"
+              style="background-color: red"
+            >
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </tr>
+          <tr>
+            <th scope="row">4</th>
+            <td>Secretaria tecnica</td>
+            <td>Ing. Mariana Juarez</td>
+            <td>mariana@sedeco.michoacan.gob.mx</td>
+            <td>*********</td>
+            <button
+              class="btn btn-success btn-sm"
+              style="background-color: green"
+            >
+              <i class="fa-solid fa-pen-to-square"></i>
+            </button>
+            <button
+              type="submit"
+              class="btn btn-danger btn-sm mx-1"
+              style="background-color: red"
+            >
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </tr>
+        </tbody>
+      </table>
+
+      <br />
+      <!-- *************** SUBSECRETARIAS ***************-->
+      <h3 class="mt-4">Datos de todas las Subsecretarias</h3>
+      <table class="table table-light my-4">
+        <thead>
+          <tr>
+            <th scope="col">No.</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Titular</th>
+            <th scope="col">Correo electrónico</th>
+            <th scope="col">Contraseña</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Secretaria tecnica</td>
+            <td>Ing. Mariana Juarez</td>
+            <td>mariana@sedeco.michoacan.gob.mx</td>
+            <td>*********</td>
+            <button
+              class="btn btn-success btn-sm"
+              style="background-color: green"
+            >
+              <i class="fa-solid fa-pen-to-square"></i>
+            </button>
+            <button
+              type="submit"
+              class="btn btn-danger btn-sm mx-1"
+              style="background-color: red"
+            >
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Secretaria tecnica</td>
+            <td>Ing. Mariana Juarez</td>
+            <td>mariana@sedeco.michoacan.gob.mx</td>
+            <td>*********</td>
+            <button
+              class="btn btn-success btn-sm"
+              style="background-color: green"
+            >
+              <i class="fa-solid fa-pen-to-square"></i>
+            </button>
+            <button
+              type="submit"
+              class="btn btn-danger btn-sm mx-1"
+              style="background-color: red"
+            >
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Secretaria tecnica</td>
+            <td>Ing. Mariana Juarez</td>
+            <td>mariana@sedeco.michoacan.gob.mx</td>
+            <td>*********</td>
+            <button
+              class="btn btn-success btn-sm"
+              style="background-color: green"
+            >
+              <i class="fa-solid fa-pen-to-square"></i>
+            </button>
+            <button
+              type="submit"
+              class="btn btn-danger btn-sm mx-1"
+              style="background-color: red"
+            >
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </tr>
+          <tr>
+            <th scope="row">4</th>
+            <td>Secretaria tecnica</td>
+            <td>Ing. Mariana Juarez</td>
+            <td>mariana@sedeco.michoacan.gob.mx</td>
+            <td>*********</td>
+            <button
+              class="btn btn-success btn-sm"
+              style="background-color: green"
+            >
+              <i class="fa-solid fa-pen-to-square"></i>
+            </button>
+            <button
+              type="submit"
+              class="btn btn-danger btn-sm mx-1"
+              style="background-color: red"
+            >
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <!-- *************** DIRECCIONES ***************-->
+      <h3 class="mt-4">Datos de todas las Direcciones</h3>
+      <table class="table table-light my-4">
+        <thead>
+          <tr>
+            <th scope="col">No.</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Titular</th>
+            <th scope="col">Correo electrónico</th>
+            <th scope="col">Contraseña</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Secretaria tecnica</td>
+            <td>Ing. Mariana Juarez</td>
+            <td>mariana@sedeco.michoacan.gob.mx</td>
+            <td>*********</td>
+            <button
+              class="btn btn-success btn-sm"
+              style="background-color: green"
+            >
+              <i class="fa-solid fa-pen-to-square"></i>
+            </button>
+            <button
+              type="submit"
+              class="btn btn-danger btn-sm mx-1"
+              style="background-color: red"
+            >
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Secretaria tecnica</td>
+            <td>Ing. Mariana Juarez</td>
+            <td>mariana@sedeco.michoacan.gob.mx</td>
+            <td>*********</td>
+            <button
+              class="btn btn-success btn-sm"
+              style="background-color: green"
+            >
+              <i class="fa-solid fa-pen-to-square"></i>
+            </button>
+            <button
+              type="submit"
+              class="btn btn-danger btn-sm mx-1"
+              style="background-color: red"
+            >
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Secretaria tecnica</td>
+            <td>Ing. Mariana Juarez</td>
+            <td>mariana@sedeco.michoacan.gob.mx</td>
+            <td>*********</td>
+            <button
+              class="btn btn-success btn-sm"
+              style="background-color: green"
+            >
+              <i class="fa-solid fa-pen-to-square"></i>
+            </button>
+            <button
+              type="submit"
+              class="btn btn-danger btn-sm mx-1"
+              style="background-color: red"
+            >
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </tr>
+          <tr>
+            <th scope="row">4</th>
+            <td>Secretaria tecnica</td>
+            <td>Ing. Mariana Juarez</td>
+            <td>mariana@sedeco.michoacan.gob.mx</td>
+            <td>*********</td>
+            <button
+              class="btn btn-success btn-sm"
+              style="background-color: green"
+            >
+              <i class="fa-solid fa-pen-to-square"></i>
+            </button>
+            <button
+              type="submit"
+              class="btn btn-danger btn-sm mx-1"
+              style="background-color: red"
+            >
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <!-- *************** SUBDIRECCIONES ***************-->
+      <h3 class="mt-4">Datos de todas las Subdirecciones</h3>
+      <table class="table table-light my-4">
+        <thead>
+          <tr>
+            <th scope="col">No.</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Titular</th>
+            <th scope="col">Correo electrónico</th>
+            <th scope="col">Contraseña</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Secretaria tecnica</td>
+            <td>Ing. Mariana Juarez</td>
+            <td>mariana@sedeco.michoacan.gob.mx</td>
+            <td>*********</td>
+            <button
+              class="btn btn-success btn-sm"
+              style="background-color: green"
+            >
+              <i class="fa-solid fa-pen-to-square"></i>
+            </button>
+            <button
+              type="submit"
+              class="btn btn-danger btn-sm mx-1"
+              style="background-color: red"
+            >
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Secretaria tecnica</td>
+            <td>Ing. Mariana Juarez</td>
+            <td>mariana@sedeco.michoacan.gob.mx</td>
+            <td>*********</td>
+            <button
+              class="btn btn-success btn-sm"
+              style="background-color: green"
+            >
+              <i class="fa-solid fa-pen-to-square"></i>
+            </button>
+            <button
+              type="submit"
+              class="btn btn-danger btn-sm mx-1"
+              style="background-color: red"
+            >
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Secretaria tecnica</td>
+            <td>Ing. Mariana Juarez</td>
+            <td>mariana@sedeco.michoacan.gob.mx</td>
+            <td>*********</td>
+            <button
+              class="btn btn-success btn-sm"
+              style="background-color: green"
+            >
+              <i class="fa-solid fa-pen-to-square"></i>
+            </button>
+            <button
+              type="submit"
+              class="btn btn-danger btn-sm mx-1"
+              style="background-color: red"
+            >
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </tr>
+          <tr>
+            <th scope="row">4</th>
+            <td>Secretaria tecnica</td>
+            <td>Ing. Mariana Juarez</td>
+            <td>mariana@sedeco.michoacan.gob.mx</td>
+            <td>*********</td>
+            <button
+              class="btn btn-success btn-sm"
+              style="background-color: green"
+            >
+              <i class="fa-solid fa-pen-to-square"></i>
+            </button>
+            <button
+              type="submit"
+              class="btn btn-danger btn-sm mx-1"
+              style="background-color: red"
+            >
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <!-- *************** DEPARTAMENTOS ***************-->
+      <h3 class="mt-4">Datos de todas los Departamentos</h3>
+      <table class="table table-light my-4">
+        <thead>
+          <tr>
+            <th scope="col">No.</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Titular</th>
+            <th scope="col">Correo electrónico</th>
+            <th scope="col">Contraseña</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Secretaria tecnica</td>
+            <td>Ing. Mariana Juarez</td>
+            <td>mariana@sedeco.michoacan.gob.mx</td>
+            <td>*********</td>
+            <button
+              class="btn btn-success btn-sm"
+              style="background-color: green"
+            >
+              <i class="fa-solid fa-pen-to-square"></i>
+            </button>
+            <button
+              type="submit"
+              class="btn btn-danger btn-sm mx-1"
+              style="background-color: red"
+            >
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Secretaria tecnica</td>
+            <td>Ing. Mariana Juarez</td>
+            <td>mariana@sedeco.michoacan.gob.mx</td>
+            <td>*********</td>
+            <button
+              class="btn btn-success btn-sm"
+              style="background-color: green"
+            >
+              <i class="fa-solid fa-pen-to-square"></i>
+            </button>
+            <button
+              type="submit"
+              class="btn btn-danger btn-sm mx-1"
+              style="background-color: red"
+            >
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Secretaria tecnica</td>
+            <td>Ing. Mariana Juarez</td>
+            <td>mariana@sedeco.michoacan.gob.mx</td>
+            <td>*********</td>
+            <button
+              class="btn btn-success btn-sm"
+              style="background-color: green"
+            >
+              <i class="fa-solid fa-pen-to-square"></i>
+            </button>
+            <button
+              type="submit"
+              class="btn btn-danger btn-sm mx-1"
+              style="background-color: red"
+            >
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </tr>
+          <tr>
+            <th scope="row">4</th>
+            <td>Secretaria tecnica</td>
+            <td>Ing. Mariana Juarez</td>
+            <td>mariana@sedeco.michoacan.gob.mx</td>
+            <td>*********</td>
+            <button
+              class="btn btn-success btn-sm"
+              style="background-color: green"
+            >
+              <i class="fa-solid fa-pen-to-square"></i>
+            </button>
+            <button
+              type="submit"
+              class="btn btn-danger btn-sm mx-1"
+              style="background-color: red"
+            >
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>

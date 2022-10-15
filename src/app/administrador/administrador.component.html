@@ -1,438 +1,47 @@
-<header>
-  <div class="contenedor-salir">
-    <button class="botonInfo" (click)="menuInfo()">
-      Administrador <i class="fa-solid fa-user"></i>
-    </button>
-    <button class="cerrar-sesion">
-      Cerrar sesion <i class="fa-solid fa-power-off"></i>
-    </button>
-  </div>
+<!-- HEADER -->
+<header class="navbar navbar-primary header" style="background-color: #4a001f">
+  <a href="/info-admin" class="mx-4"
+    >Administrador <i class="fa-solid fa-user"></i
+  ></a>
+  <a href="#" class="mx-4"
+    >Cerrar sesion <i class="fa-solid fa-power-off"></i
+  ></a>
 </header>
 
-<hr />
-
-<nav class="menu-list">
-  <div class="menu">
-    <button (click)="menuInicio()">
-      Inicio <i class="fa-solid fa-house"></i>
-    </button>
-    <button (click)="menuDeptos()">
-      Organigrama <i class="fa-solid fa-sitemap"></i>
-    </button>
+<!-- MENU -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarNavAltMarkup"
+    aria-controls="navbarNavAltMarkup"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav mx-3">
+      <a class="nav-item nav-link active" href="/inicio-admin">
+        Inicio <i class="fa-solid fa-house"></i
+        ><span class="sr-only">(current)</span></a
+      >
+      <a class="nav-item nav-link" href="/organigrama">
+        Organigrama <i class="fa-solid fa-sitemap"></i
+      ></a>
+    </div>
   </div>
+  <img
+    src="https://michoacan.gob.mx/corry/logos/escudo-Gray.png"
+    alt="escudo"
+    class="mx-3"
+    width="50px"
+    height="50px"
+  />
 </nav>
 
-<br />
-<br />
-<!-- *************** INICIO ***************-->
-<!-- FORMULARIO -->
-<div id="container-inicio" *ngIf="mostrarInicio">
-  <div class="contenedor-registro">
-    <h3>Realizar registro</h3>
-    <button (click)="registroSecret()">Secretario</button>
-    <button>Secretaría</button>
-    <button>Subsecretaría</button>
-    <br />
-    <button>Dirección</button>
-    <button>Subdirección</button>
-    <button>Departamento</button>
-  </div>
-</div>
-
-<!-- **********MENU REGISTRO SECRETARIO********** -->
-<div *ngIf="mostrarSecretReg">
-  <section id="contenedor-info">
-    <div class="contenedor-altasDepto2">
-      <h2 class="title-inicio">Realizar registro</h2>
-      <form id="add-depto" name="add-depto">
-        <div class="container-fila">
-          <label for="nombre-depto">Nombre:</label>
-          <input
-            type="text"
-            id="nombre-depto"
-            name="nombre-depto"
-            placeholder="Escribe el nombre"
-            required="true"
-          />
-        </div>
-        <br />
-        <div class="container-fila">
-          <label for="nombre-encargado">Responsable:</label>
-          <input
-            type="text"
-            id="nombre-encargado"
-            name="nombre-encargado"
-            placeholder="Escribe el nombre"
-            required="true"
-          />
-        </div>
-        <br />
-        <div class="container-fila">
-          <label for="correo">Correo electronico:</label>
-          <input
-            type="text"
-            id="correo"
-            name="correo"
-            placeholder="Escribe el correo"
-            required="true"
-          />
-        </div>
-        <br />
-        <div class="container-fila">
-          <label for="asig-contrasenia">Contraseña:</label>
-          <input
-            type="password"
-            id="asig-contrasenia"
-            name="asig-contrasenia"
-            placeholder="Escribe la contraseña"
-            required="true"
-          />
-        </div>
-        <br />
-        <div class="container-fila">
-          <label for="confirm-contrasenia">Confirmar contraseña:</label>
-          <input
-            type="password"
-            id="confirm-contrasenia"
-            name="confirm-contrasenia"
-            placeholder="Escribe la contraseña"
-            required="true"
-          />
-        </div>
-
-        <!-- GUARDAR -->
-        <button type="submit" class="btn-admin-guardar">
-          Guardar <i class="fa-solid fa-floppy-disk"></i>
-        </button>
-      </form>
-      <img
-        class="escudo-sedeco-admin"
-        src="https://michoacan.gob.mx/corry/logos/escudo-Gray.png"
-        alt="SEDECO"
-        width="180px"
-        height="180px"
-      />
-    </div>
-  </section>
-</div>
-
-<!-- ORGANIGRAMA -->
-<!-- *************** SECRETARIAS ***************-->
-<div id="secret" *ngIf="mostrarSecret">
-  <section id="container-ver-docs">
-    <div class="container-ver-docs">
-      <form class="buscar" id="buscar" name="buscar">
-        <input type="search" class="search" placeholder="Buscar" />
-      </form>
-
-      <table>
-        <caption>
-          <h2>Datos de todas las Secretarias</h2>
-        </caption>
-        <tr>
-          <th>Nombre</th>
-          <th>Titular</th>
-          <th>Correo electronico</th>
-          <th>Contraseña</th>
-        </tr>
-        <tr>
-          <td>Secretaria tecnica</td>
-          <td>Lic. Mariana Zavala</td>
-          <td>mariana@sedeco.michoacan.gob.mx</td>
-          <td>**********</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-      </table>
-      <br />
-      <button class="btn-edit-secret" type="submit">
-        Editar <i class="fa-solid fa-pen-to-square"></i>
-      </button>
-      <button class="btn-borrar-secret" type="submit">
-        Borrar <i class="fa-solid fa-trash"></i>
-      </button>
-    </div>
-  </section>
-</div>
-<br />
-<!-- *************** SUBSECRETARIAS ***************-->
-<div id="subsecret" *ngIf="mostrarSubsecre">
-  <section id="container-ver-docs">
-    <div class="container-ver-docs">
-      <table>
-        <caption>
-          <h2>Datos de todas las Subsecretarias</h2>
-        </caption>
-        <tr>
-          <th>Nombre</th>
-          <th>Titular</th>
-          <th>Correo electronico</th>
-          <th>Contraseña</th>
-        </tr>
-        <tr>
-          <td>Secretaria tecnica</td>
-          <td>Lic. Mariana Zavala</td>
-          <td>mariana@sedeco.michoacan.gob.mx</td>
-          <td>**********</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-      </table>
-      <br />
-      <button class="btn-edit-subsecret" type="submit">
-        Editar <i class="fa-solid fa-pen-to-square"></i>
-      </button>
-      <button class="btn-borrar-secret" type="submit">
-        Borrar <i class="fa-solid fa-trash"></i>
-      </button>
-    </div>
-  </section>
-</div>
-<br />
-<!-- *************** DIRECCIONES ***************-->
-<div id="direc" *ngIf="mostrarDirec">
-  <section id="container-ver-docs">
-    <div class="container-ver-docs">
-      <table>
-        <caption>
-          <h2>Datos de todas las Direcciones</h2>
-        </caption>
-        <tr>
-          <th>Nombre</th>
-          <th>Titular</th>
-          <th>Correo electronico</th>
-          <th>Contraseña</th>
-        </tr>
-        <tr>
-          <td>Secretaria tecnica</td>
-          <td>Lic. Mariana Zavala</td>
-          <td>mariana@sedeco.michoacan.gob.mx</td>
-          <td>**********</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-      </table>
-      <br />
-      <button class="btn-edit-direc" type="submit">
-        Editar <i class="fa-solid fa-pen-to-square"></i>
-      </button>
-      <button class="btn-borrar-secret" type="submit">
-        Borrar <i class="fa-solid fa-trash"></i>
-      </button>
-    </div>
-  </section>
-</div>
-<br />
-<!-- *************** SUBDIRECCIONES ***************-->
-<div id="subdirec" *ngIf="mostrarSubdirec">
-  <section id="container-ver-docs">
-    <div class="container-ver-docs">
-      <table>
-        <caption>
-          <h2>Datos de todas las Subdirecciones</h2>
-        </caption>
-        <tr>
-          <th>Nombre</th>
-          <th>Titular</th>
-          <th>Correo electronico</th>
-          <th>Contraseña</th>
-        </tr>
-        <tr>
-          <td>Secretaria tecnica</td>
-          <td>Lic. Mariana Zavala</td>
-          <td>mariana@sedeco.michoacan.gob.mx</td>
-          <td>**********</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-      </table>
-      <br />
-      <button class="btn-edit-subdirec" type="submit">
-        Editar <i class="fa-solid fa-pen-to-square"></i>
-      </button>
-      <button class="btn-borrar-secret" type="submit">
-        Borrar <i class="fa-solid fa-trash"></i>
-      </button>
-    </div>
-  </section>
-</div>
-<br />
-<!-- *************** DEPARTAMENTOS ***************-->
-<div id="depto" *ngIf="mostrarDeptos">
-  <section id="container-ver-docs">
-    <div class="container-ver-docs">
-      <table>
-        <caption>
-          <h2>Datos de todas los Departamentos</h2>
-        </caption>
-        <tr>
-          <th>Nombre</th>
-          <th>Titular</th>
-          <th>Correo electronico</th>
-          <th>Contraseña</th>
-        </tr>
-        <tr>
-          <td>Secretaria tecnica</td>
-          <td>Lic. Mariana Zavala</td>
-          <td>mariana@sedeco.michoacan.gob.mx</td>
-          <td>**********</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-      </table>
-      <br />
-      <button class="btn-edit-depto" type="submit">
-        Editar <i class="fa-solid fa-pen-to-square"></i>
-      </button>
-      <button class="btn-borrar-secret" type="submit">
-        Borrar <i class="fa-solid fa-trash"></i>
-      </button>
-    </div>
-  </section>
-</div>
-
-<!-- *************** INFORMACION ***************-->
-<div id="info" *ngIf="mostrarInfo">
-  <section>
-    <div class="container-info">
-      <h2>Administrador</h2>
-      <form id="info-admin" name="info-admin">
-        <div class="container-form-info">
-          <div class="container-infouno">
-            <div class="correo">
-              <label for="correo">Correo electronico</label>
-              <input
-                name="correo"
-                id="correo"
-                type="text"
-                value="admin@sedeco.gob.mx"
-              />
-            </div>
-            <div class="container-labels">
-              <label for="encargado">Encargado</label>
-              <input
-                id="encargado"
-                name="encargado"
-                type="text"
-                value="Ing. Ramiro Ramirez Abarca"
-              />
-            </div>
-          </div>
-          <br />
-          <div class="container-infodos">
-            <label for="password">Contraseña:</label>
-            <input
-              id="password"
-              name="password"
-              type="password"
-              value="4563363522"
-            />
-            <div class="container-labels">
-              <div class="user">
-                <label for="usuario">Usuario:</label>
-                <input
-                  id="usuario"
-                  name="usuario"
-                  type="text"
-                  value="Administrador"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="container-2">
-          <button class="btn-edit-admin" type="submit">
-            Editar <i class="fa-solid fa-pen-to-square"></i>
-          </button>
-
-          <button class="btn-save-admin" type="submit">
-            Guardar <i class="fa-solid fa-floppy-disk"></i>
-          </button>
-        </div>
-      </form>
-    </div>
-  </section>
-</div>
+<router-outlet></router-outlet>
 
 <footer class="footer">
   <hr />

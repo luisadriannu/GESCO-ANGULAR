@@ -1,0 +1,138 @@
+<!-- **********MENU REGISTRO SECRETARIO********** -->
+<div *ngIf="registro">
+  <div class="container col-md-4 registro-flotante">
+    <button
+      (click)="cerrar()"
+      class="btn btn-sm btn-block my-4 btn-cerrar"
+      style="background-color: #4a001f; color: white"
+    >
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+
+    <!-- ********** Registro **********-->
+    <h2 class="title-inicio" style="text-align: center">
+      Realizar registro de (usuario)
+    </h2>
+    <form action="registro-usuario">
+      <br />
+      <div class="form-floating mb-3">
+        <input
+          name="nombre-depto"
+          type="text"
+          class="form-control"
+          id="floatingInput"
+          placeholder="Nombre del departamento"
+          maxlength="50"
+          required
+        />
+        <label for="floatingInput">Nombre del departamento:</label>
+      </div>
+      <div class="form-floating">
+        <input
+          name="responsable"
+          type="text"
+          class="form-control"
+          id="floatingPassword"
+          placeholder="Nombre del responsable"
+          maxlength="45"
+          required
+        />
+        <label for="floatingPassword">Nombre del responsable:</label>
+      </div>
+      <br />
+      <div class="form-floating">
+        <input
+          name="correo"
+          type="email"
+          class="form-control"
+          id="floatingPassword"
+          placeholder="Correo electrónico"
+          maxlength="40"
+          required
+        />
+        <label for="floatingPassword">Correo electrónico:</label>
+      </div>
+      <br />
+      <div class="form-floating">
+        <input
+          name="password"
+          type="password"
+          class="form-control"
+          id="floatingPassword"
+          placeholder="Contraseña"
+          maxlength="20"
+          required
+        />
+        <label for="floatingPassword">Contraseña:</label>
+      </div>
+      <br />
+      <div class="form-floating">
+        <input
+          name="confirm-pass"
+          type="password"
+          class="form-control"
+          id="floatingPassword"
+          placeholder="Confirmar contraseña"
+          maxlength="20"
+          required
+        />
+        <label for="floatingPassword">Confirmar contraseña:</label>
+      </div>
+      <div class="row">
+        <button
+          type="submit"
+          class="btn btn-lg btn-block my-4"
+          style="background-color: #4a001f; color: white"
+        >
+          Guardar <i class="fa-solid fa-floppy-disk"></i>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- *************** INICIO ***************-->
+<div class="container my-4 contenedor-inicio">
+  <h3>Realizar registro:</h3>
+  <div class="row mt-4">
+    <div class="col-4">
+      <button id="circulo" (click)="registrar()">
+        <i class="fa-solid fa-building" style="font-size: 40px"></i>
+      </button>
+      <h4 class="my-2">Secretario</h4>
+    </div>
+    <div class="col-4">
+      <button id="circulo">
+        <i class="fa-solid fa-desktop" style="font-size: 40px"></i>
+      </button>
+      <h4 class="my-2">Secretaria</h4>
+    </div>
+    <div class="col-4">
+      <button id="circulo">
+        <i class="fa-solid fa-pen" style="font-size: 40px"></i>
+      </button>
+      <h4 class="my-2">Subsecretaria</h4>
+    </div>
+  </div>
+  <!-- col2 -->
+  <div class="row mt-4">
+    <div class="col-4">
+      <button id="circulo">
+        <i class="fa-solid fa-book" style="font-size: 40px"></i>
+      </button>
+      <h4 class="my-2">Direccion</h4>
+    </div>
+    <div class="col-4">
+      <button id="circulo">
+        <i class="fa-solid fa-print" style="font-size: 40px"></i>
+      </button>
+      <h4 class="my-2">Subdireccion</h4>
+    </div>
+    <div class="col-4">
+      <button id="circulo">
+        <i class="fa-solid fa-briefcase" style="font-size: 40px"></i>
+      </button>
+      <h4 class="my-2">Departamento</h4>
+    </div>
+  </div>
+</div>

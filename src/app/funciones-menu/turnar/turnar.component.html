@@ -1,0 +1,231 @@
+<!-- *************** TURNAR ***************-->
+<div class="container my-4">
+  <h3>Turnar Documentos</h3>
+  <div class="contenedor-turnar-documentos2">
+    <form action="turnar-doc">
+      <h4>Elige un documento</h4>
+      <div class="col">
+        <select name="tipo-oficio" class="form-control">
+          <option value="#">Selecciona el tipo de oficio:</option>
+          <option value="internos">Internos</option>
+          <option value="externos">Externos</option>
+          <option value="circulares">Circulares</option>
+        </select>
+      </div>
+      <br />
+      <!-- <div class="doc">
+        <p>Aqui iran todos los documentos</p>
+      </div>
+      <br /><br /><br /><br /><br /><br /><br /><br /> -->
+      <div class="col my-4">
+        <h3>Elija el departamento</h3>
+        <br />
+        <!-- SECRETARIAS -->
+        <h4>Secretarias:</h4>
+        <select
+          name="secretarias"
+          class="form-select"
+          aria-label="Default select example"
+        >
+          <option selected>Turnar a:</option>
+          <option value="secretario">Secretarío</option>
+          <option value="secret-tecn">Secretaría Técnica</option>
+          <option value="secret-enlace">Enlace Jurídico</option>
+        </select>
+      </div>
+
+      <div class="col my-4">
+        <!-- SUBSECRETARIAS -->
+        <h4>Subsecretarias:</h4>
+        <select
+          name="subsecretarias"
+          class="form-select"
+          aria-label="Default select example"
+        >
+          <option selected>Turnar a:</option>
+          <optgroup label="Enlace Juridico:">
+            <option value="sub-comercio">De comercio</option>
+            <option value="sub-trabajo">De trabajo</option>
+          </optgroup>
+        </select>
+      </div>
+      <div class="col my-4">
+        <!-- DIRECCIONES -->
+        <h4>Direcciones:</h4>
+        <select
+          name="direcciones"
+          class="form-select"
+          aria-label="Default select example"
+        >
+          <option selected>Turnar a:</option>
+          <optgroup label="Subsecretaria de comercio internacional:">
+            <option value="direc-comercializacion">De comercializacion</option>
+            <option value="direc-inversiones">De inversiones</option>
+          </optgroup>
+          <optgroup label="Subsecretaria de trabajo y prevision social:">
+            <option value="direc-empleo">De empleo</option>
+            <option value="direc-prevision">De prevision social</option>
+          </optgroup>
+
+          <optgroup label="Enlace Juridico:">
+            <option value="direc-desarrollo">De desarrollo empresarial</option>
+            <option value="direc-gestionDeFondos">
+              De gestion de fondos y proyectos
+            </option>
+            <option value="direc-mejoraR">De mejora regulatoria</option>
+            <option value="deleg">Delegacion administrativa</option>
+          </optgroup>
+        </select>
+      </div>
+
+      <div class="col my-4">
+        <!-- SUBDIRECCIONES -->
+        <h4>Subdirecciones:</h4>
+        <select
+          name="subdirecciones"
+          class="form-select"
+          aria-label="Default select example"
+        >
+          <option selected>Turnar a:</option>
+          <optgroup label="Direccion de inversiones:">
+            <option value="subdirec-inversionesE">
+              De inversiones estrategicas
+            </option>
+          </optgroup>
+          <optgroup label="Direccion de empleo digno:">
+            <option value="subdirec-promoEmpleo">
+              De promocion del empleo
+            </option>
+          </optgroup>
+        </select>
+      </div>
+      <div class="col my-4">
+        <!-- DEPARTAMENTOS -->
+        <h4>Departamentos:</h4>
+        <select
+          name="departamentos"
+          class="form-select"
+          aria-label="Default select example"
+        >
+          <option selected>Turnar a:</option>
+          <optgroup label="Direccion de comercializacion: ">
+            <option value="depto-eventos">
+              De eventos y desarrollo de proveedura
+            </option>
+            <option value="depto-innovacion">
+              De innovacion y desarrollo de negocios digitales
+            </option>
+            <option value="depto-fomento">
+              De fomento a la exportacion y franquicias
+            </option>
+          </optgroup>
+          <optgroup
+            label="Direccion De inversiones &rarr; Subdireccion De inversiones estrategicas: "
+          >
+            <option value="depto-inversiones">
+              De inversiones internacionales
+            </option>
+            <option value="depto-inversiones-nacionales">
+              De inversiones nacionales
+            </option>
+            <option value="depto-inteligencia">
+              De inteligencia de negocios
+            </option>
+          </optgroup>
+
+          <optgroup label="Direccion De inversiones: ">
+            <option value="depto-sustentables">
+              De energia y soluciones sustentables
+            </option>
+            <option value="depto-estimulos">
+              De zonas de desarrollo estimulos e incentivos fiscales
+            </option>
+            <option value="depto-minera">De promocion minera</option>
+            <option value="depto-georeferencia">
+              De informacion estadistica y georeferenciacion
+            </option>
+          </optgroup>
+
+          <optgroup label="Direccion de prevision social: ">
+            <option value="depto-higie-seguri">
+              De inspeccion del trabajo higiene y seguridad
+            </option>
+            <option value="depto-fomen-practi">
+              De fomento a las buenas practicas empresariales
+            </option>
+            <option value="depto-procuraduria">
+              De la procuraduria local de la defensa del trabajo
+            </option>
+          </optgroup>
+
+          <optgroup
+            label="Direccion de desarrollo empresarial y economia social"
+          >
+            <option value="depto-vincuEmpresarial">
+              De consultoria y vinculacion empresarial
+            </option>
+            <option value="depto-marColectivas">
+              De fomento al cooperativismo y marcas colectivas
+            </option>
+            <option value="depto-proIndustrial">
+              De productos y propiedad industrial
+            </option>
+            <option value="depto-microempresas">
+              De microempresas de comercio y servicios
+            </option>
+            <option value="depto-capaCer-empre">
+              De capacitacion y certificacion empresarial
+            </option>
+          </optgroup>
+
+          <optgroup label="Direccion de gestion de fondos y proyectos:">
+            <option value="depto-progra-proyec">
+              De integracion de programas y proyectos
+            </option>
+            <option value="depto-infra-mercados">
+              De proyectos de infraestructura de mercados
+            </option>
+            <option value="depto-fondosFede">
+              De gestion de fondos federales
+            </option>
+            <option value="depto-financiamiento">
+              De gestion de financiamiento
+            </option>
+          </optgroup>
+
+          <optgroup label="Direccion de mejora regulatoria:">
+            <option value="depto-servi-empre">
+              De tramites y servicios empresariales
+            </option>
+            <option value="depto-tramita-facil">
+              De tramita facil empresarial
+            </option>
+          </optgroup>
+
+          <optgroup label="Delegacion administrativa:">
+            <option value="depto-RH">De recursos humanos</option>
+            <option value="depto-RFinancieros">De recursos financieros</option>
+            <option value="depto-RMateriales">
+              De recursos materiales y servicios generales
+            </option>
+            <option value="depto-informatica">De informatica</option>
+          </optgroup>
+        </select>
+      </div>
+
+      <!--  -->
+      <div class="col">
+        <input type="file" class="form-control" />
+      </div>
+      <div class="row my-4">
+        <button
+          type="submit"
+          class="btn btn-lg btn-block"
+          style="background-color: #4a001f; color: white"
+        >
+          Turnar <i class="fa-solid fa-share-nodes"></i>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

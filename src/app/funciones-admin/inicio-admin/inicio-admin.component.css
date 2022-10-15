@@ -1,0 +1,38 @@
+#circulo {
+  display: inline;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  background-color: #4a001f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#circulo {
+  color: white;
+  font-weight: bold;
+}
+
+.contenedor-inicio {
+  text-align: center;
+}
+button {
+  overflow: auto;
+  margin: auto;
+}
+.registro-flotante {
+  position: absolute;
+  left: 34%;
+  z-index: 999;
+  background-color: whitesmoke;
+  border-radius: 8px;
+  /* display: none; */
+}
+.btn-cerrar {
+  background-color: #4a001f;
+  color: white;
+  float: right;
+  position: absolute;
+  right: 0%;
+  top: 0;
+}
