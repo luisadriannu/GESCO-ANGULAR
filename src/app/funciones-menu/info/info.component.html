@@ -1,23 +1,31 @@
 <!-- *************** INFORMACION ***************-->
 <div class="container" style="text-align: center">
-  <h2>Secretaria Particular</h2>
+  <h2>(Usuario)</h2>
 
   <form name="info-depto">
     <div class="row my-4">
       <div class="col">
         <input
+          class="input"
           type="text"
           class="form-control"
-          value="secretariaparti@sedeco.gob.mx"
+          value="(Correo electronico)"
           placeholder="Correo electrónico"
+          required
+          maxlength="30"
+          [disabled]="deshabilitado"
         />
       </div>
       <div class="col">
         <input
+          class="input"
           type="text"
           class="form-control"
-          value="Ing. Federico Borja"
+          value="(Encargado)"
           placeholder="Encargado"
+          maxlength="30"
+          required
+          [disabled]="deshabilitado"
         />
       </div>
     </div>
@@ -25,27 +33,46 @@
     <div class="row">
       <div class="col">
         <input
+          class="input"
           type="password"
           class="form-control"
           value="736537837"
           placeholder="Contraseña"
+          required
+          maxlength="30"
+          [disabled]="deshabilitado"
         />
       </div>
       <div class="col">
         <input
           type="text"
           class="form-control"
-          value="Secretaria Particular"
+          value="(usuario)"
           placeholder="Usuario"
+          disabled
         />
       </div>
     </div>
 
     <div class="col my-4">
-      <button class="btn btn-success btn-lg mx-1">Guardar</button>
-      <button class="btn btn-primary btn-lg">
-        Editar <i class="fa-solid fa-pen-to-square"></i>
-      </button>
+      <div class="row">
+        <button type="submit" class="btn btn-success btn-lg mx-1">
+          Guardar
+        </button>
+      </div>
     </div>
+    <input
+      class="form-check-input"
+      type="checkbox"
+      id="edit"
+      (change)="deshabilitado = !deshabilitado"
+      style="font-size: 20px"
+    />
+    <label
+      class="form-check-label mx-2"
+      for="flexCheckDefault"
+      style="font-size: 20px"
+      >Editar
+    </label>
   </form>
 </div>

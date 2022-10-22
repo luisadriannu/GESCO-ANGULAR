@@ -1,6 +1,6 @@
 <!-- HEADER -->
 <header class="navbar navbar-primary header" style="background-color: #4a001f">
-  <a href="/info-admin" class="mx-4"
+  <a routerLink="/info/admin" class="mx-4"
     >Administrador <i class="fa-solid fa-user"></i
   ></a>
   <a href="#" class="mx-4"
@@ -23,13 +23,22 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav mx-3">
-      <a class="nav-item nav-link active" href="/inicio-admin">
+      <a
+        class="nav-item nav-link menu"
+        routerLink="inicio/admin"
+        routerLinkActive="active-link"
+      >
         Inicio <i class="fa-solid fa-house"></i
         ><span class="sr-only">(current)</span></a
       >
-      <a class="nav-item nav-link" href="/organigrama">
+      <a
+        class="nav-item nav-link menu"
+        routerLink="/admin/organigrama"
+        routerLinkActive="active-link"
+      >
         Organigrama <i class="fa-solid fa-sitemap"></i
       ></a>
+      
     </div>
   </div>
   <img
@@ -40,9 +49,7 @@
     height="50px"
   />
 </nav>
-
 <router-outlet></router-outlet>
-
 <footer class="footer">
   <hr />
   <img
@@ -51,5 +58,7 @@
     width="200px"
     height="90px"
   />
-  <h5>SECRETARIA DE DESARROLLO ECONOMICO</h5>
+  <div class="my-3">
+    <h5>SECRETARIA DE DESARROLLO ECONOMICO</h5>
+  </div>
 </footer>

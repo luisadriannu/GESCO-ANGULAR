@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SubdireccionComponent } from './subdireccion.component';
+import { RegistroSecretComponent } from './registro-secret.component';
 
-describe('SubdireccionComponent', () => {
-  let component: SubdireccionComponent;
-  let fixture: ComponentFixture<SubdireccionComponent>;
+describe('RegistroSecretComponent', () => {
+  let component: RegistroSecretComponent;
+  let fixture: ComponentFixture<RegistroSecretComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SubdireccionComponent ]
+      declarations: [ RegistroSecretComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SubdireccionComponent);
+    fixture = TestBed.createComponent(RegistroSecretComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

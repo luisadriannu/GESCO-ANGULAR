@@ -6,13 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./inicio-admin.component.css'],
 })
 export class InicioAdminComponent implements OnInit {
-  registro = false;
+  inicio = true;
 
-  registrar() {
-    this.registro = true;
-  }
-  cerrar() {
-    this.registro = false;
+  ocultar() {
+    this.inicio = false
   }
   constructor() {}
 

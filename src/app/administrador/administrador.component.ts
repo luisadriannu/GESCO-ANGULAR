@@ -1,4 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { style } from '@angular/animations';
+import {
+  Component,
+  OnInit,
+  HostListener,
+  ViewChild,
+  ElementRef,
+  Renderer2,
+} from '@angular/core';
 
 @Component({
   selector: 'app-administrador',

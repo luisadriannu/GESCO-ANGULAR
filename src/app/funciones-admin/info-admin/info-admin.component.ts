@@ -3,13 +3,11 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-info-admin',
   templateUrl: './info-admin.component.html',
-  styleUrls: ['./info-admin.component.css']
+  styleUrls: ['./info-admin.component.css'],
 })
 export class InfoAdminComponent implements OnInit {
+  deshabilitado = true;
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

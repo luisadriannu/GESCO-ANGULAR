@@ -3,13 +3,19 @@
   <h3>Turnar Documentos</h3>
   <div class="contenedor-turnar-documentos2">
     <form action="turnar-doc">
-      <h4>Elige un documento</h4>
+      <label for="tipo-oficio">Tipo de oficio:</label>
       <div class="col">
-        <select name="tipo-oficio" class="form-control">
-          <option value="#">Selecciona el tipo de oficio:</option>
-          <option value="internos">Internos</option>
-          <option value="externos">Externos</option>
-          <option value="circulares">Circulares</option>
+        <select
+          #tipoOficio
+          name="tipo-oficio"
+          class="form-control"
+          (change)="selectOption()"
+        >
+          <optgroup label="Selecciona el tipo de oficio:">
+            <option value="interno">Interno</option>
+            <option value="externo">Externo</option>
+            <option value="circular">Circular</option>
+          </optgroup>
         </select>
       </div>
       <br />
@@ -20,29 +26,35 @@
       <div class="col my-4">
         <h3>Elija el departamento</h3>
         <br />
+
         <!-- SECRETARIAS -->
         <h4>Secretarias:</h4>
         <select
+          #secretarias
+          id="secret"
           name="secretarias"
-          class="form-select"
+          class="form-select secretaria"
           aria-label="Default select example"
+          (change)="mostrarSecretSelect()"
         >
-          <option selected>Turnar a:</option>
-          <option value="secretario">Secretarío</option>
-          <option value="secret-tecn">Secretaría Técnica</option>
-          <option value="secret-enlace">Enlace Jurídico</option>
+          <optgroup label="Turnar a:">
+            <option value="secretario">Secretarío</option>
+            <option value="secret-tecn">Secretaría Técnica</option>
+            <option value="secret-enlace">Enlace Jurídico</option>
+          </optgroup>
         </select>
       </div>
-
       <div class="col my-4">
         <!-- SUBSECRETARIAS -->
         <h4>Subsecretarias:</h4>
         <select
+          #subsecret
+          id="subsecret"
           name="subsecretarias"
-          class="form-select"
+          class="form-select subsecret"
           aria-label="Default select example"
+          (change)="mostrarSubsecretSelect()"
         >
-          <option selected>Turnar a:</option>
           <optgroup label="Enlace Juridico:">
             <option value="sub-comercio">De comercio</option>
             <option value="sub-trabajo">De trabajo</option>
@@ -53,11 +65,13 @@
         <!-- DIRECCIONES -->
         <h4>Direcciones:</h4>
         <select
+          #direc
+          id="direc"
           name="direcciones"
           class="form-select"
           aria-label="Default select example"
+          (change)="mostrarDirecSelect()"
         >
-          <option selected>Turnar a:</option>
           <optgroup label="Subsecretaria de comercio internacional:">
             <option value="direc-comercializacion">De comercializacion</option>
             <option value="direc-inversiones">De inversiones</option>
@@ -82,11 +96,13 @@
         <!-- SUBDIRECCIONES -->
         <h4>Subdirecciones:</h4>
         <select
+          #subdirec
+          id="subdirec"
           name="subdirecciones"
           class="form-select"
           aria-label="Default select example"
+          (change)="mostrarSubdirecSelect()"
         >
-          <option selected>Turnar a:</option>
           <optgroup label="Direccion de inversiones:">
             <option value="subdirec-inversionesE">
               De inversiones estrategicas
@@ -103,11 +119,13 @@
         <!-- DEPARTAMENTOS -->
         <h4>Departamentos:</h4>
         <select
+          #depto
+          id="depto"
           name="departamentos"
           class="form-select"
           aria-label="Default select example"
+          (change)="mostrarDeptoSelect()"
         >
-          <option selected>Turnar a:</option>
           <optgroup label="Direccion de comercializacion: ">
             <option value="depto-eventos">
               De eventos y desarrollo de proveedura
@@ -217,7 +235,36 @@
       <div class="col">
         <input type="file" class="form-control" />
       </div>
+      <br />
+      <hr />
       <div class="row my-4">
+        <h4>
+          Tipo de oficio a enviar:
+          <span
+            style="color: red; text-decoration: underline"
+            *ngIf="mostrar"
+            >{{ tipoOficio.options[tipoOficio.selectedIndex].text }}</span
+          >
+        </h4>
+
+        <h4 class="my-4">
+          {{ texto }} {{ complemento }}
+          <span *ngIf="mostrarSecret" class="depto-select">{{
+            secretarias.options[secretarias.selectedIndex].text
+          }}</span>
+          <span *ngIf="mostrarSubsecret" class="depto-select">{{
+            subsecret.options[subsecret.selectedIndex].text
+          }}</span>
+          <span *ngIf="mostrarDirec" class="depto-select">{{
+            direc.options[direc.selectedIndex].text
+          }}</span>
+          <span *ngIf="mostrarSubdirec" class="depto-select">{{
+            subdirec.options[subdirec.selectedIndex].text
+          }}</span>
+          <span *ngIf="mostrarDeptos" class="depto-select">{{
+            depto.options[depto.selectedIndex].text
+          }}</span>
+        </h4>
         <button
           type="submit"
           class="btn btn-lg btn-block"

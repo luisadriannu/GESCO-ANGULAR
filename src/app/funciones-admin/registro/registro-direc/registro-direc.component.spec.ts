@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DireccionComponent } from './direccion.component';
+import { RegistroDirecComponent } from './registro-direc.component';
 
-describe('DireccionComponent', () => {
-  let component: DireccionComponent;
-  let fixture: ComponentFixture<DireccionComponent>;
+describe('RegistroDirecComponent', () => {
+  let component: RegistroDirecComponent;
+  let fixture: ComponentFixture<RegistroDirecComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DireccionComponent ]
+      declarations: [ RegistroDirecComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(DireccionComponent);
+    fixture = TestBed.createComponent(RegistroDirecComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,6 +1,6 @@
+
 <!-- ********** Editar oficio **********-->
-<div *ngIf="editarDocs">
-  <div class="container col-md-4 registro-flotante">
+  <div class="container col-md-4 registro-flotante" *ngIf="editarDocs" [@animacionRegistro]="estadoCuadro">
     <button
       (click)="cerrar()"
       class="btn btn-sm btn-block my-4 btn-cerrar"
@@ -17,8 +17,9 @@
       <br />
       <div class="col">
         <label for="tipo-oficio">Tipo de oficio:</label>
-        <select name="tipo-oficio" class="form-control">
-          <option value="#">Selecciona el tipo de oficio:</option>
+        <select name="tipo-oficio" class="form-control" required>
+          
+          <option value="#" >Selecciona el tipo de oficio:</option>
           <option value="internos">Internos</option>
           <option value="externos">Externos</option>
           <option value="circulares">Circulares</option>
@@ -33,6 +34,7 @@
           class="form-control"
           value="Nombre del titular"
           maxlength="50"
+          required
         />
       </div>
 
@@ -45,6 +47,7 @@
           class="form-control"
           value="Nombre de la dependencia"
           maxlength="40"
+          required
         />
       </div>
       <br />
@@ -60,10 +63,9 @@
       </div>
     </form>
   </div>
-</div>
 <!-- *************** VER DOCS ***************-->
 <div *ngIf="mostrarDocs">
-  <div class="container">
+  <div class="container my-4">
     <section id="container-ver-docs">
       <div class="container-ver-docs">
         <div class="input-group rounded">
@@ -174,45 +176,7 @@
         <br />
 
         <!-- editar flotante -->
-        <!-- <div class="editar ocultar" id="editarFlo">
-          <form action="editar-docs">
-            <div class="contenedor-editar">
-              <button id="cerrar">
-                <i class="fa-solid fa-xmark"></i>
-              </button>
-              <input
-                type="text"
-                class="input"
-                placeholder="Numero de oficio"
-                required
-              />
-              <br />
-              <br />
-              <input
-                type="text"
-                class="input"
-                placeholder="Tipo de oficio"
-                required
-              />
-              <br />
-              <br />
-              <input type="text" class="input" placeholder="Titular" required />
-              <br />
-              <br />
-              <input
-                type="text"
-                class="input"
-                placeholder="Dependencia"
-                required
-              />
-              <br />
-              <br />
-              <input type="file" /> <br />
-              <br />
-              <button type="submit">Guardar cambios</button>
-            </div>
-          </form>
-        </div> -->
+        
         <form action="exportar-docs">
           <div class="form-check">
             <input
