@@ -1,21 +1,63 @@
-
 .registro-flotante {
   position: fixed;
   left: 34%;
-  top: 25%;
+  top: 21%;
   z-index: 999;
-  background-color: #F8F9FA;
+  background-color: #f8f9fa;
   border-radius: 10px;
   padding: 25px;
-  -webkit-box-shadow: 0px 0px 45px -6px rgba(0,0,0,0.75);
--moz-box-shadow: 0px 0px 45px -6px rgba(0,0,0,0.75);
-box-shadow: 0px 0px 45px -6px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 0px 0px 45px -6px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 45px -6px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 45px -6px rgba(0, 0, 0, 0.75);
+}
+.animation {
+  animation: transicion 0.6s ease;
+}
+
+@keyframes transicion {
+  from {
+    transform: translateY(50vh);
+    opacity: 0.1;
+  }
+  to {
+    transform: translateX(0);
+  }
 }
 .btn-cerrar {
   background-color: #4a001f;
   color: white;
   position: absolute;
-  right: 10px;
+  right: 15px;
   top: 0;
+  font-size: 16px;
 }
-
+.btn-cerrar:hover {
+  background-color: red;
+  color: white;
+  transition: 0.5s ease;
+  font-size: 16px;
+}
+.btn-save {
+  background-color: #4a001f;
+  color: white;
+}
+.btn-save:hover {
+  background-color: white;
+  color: black;
+  border: 1px solid #4a001f;
+  transition: 0.5s ease;
+}
+.confirm {
+  position: absolute;
+  bottom: 8px;
+  left: 16%;
+}
+.btn-docs {
+  background-color: #4a001f;
+  color: white;
+}
+.btn-docs:hover {
+  background-color: white;
+  border: 1px solid #4a001f;
+  color: black;
+}

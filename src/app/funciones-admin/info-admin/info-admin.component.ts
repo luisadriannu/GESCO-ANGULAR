@@ -7,6 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InfoAdminComponent implements OnInit {
   deshabilitado = true;
+  password = true;
+  eye = `<i class="fa-solid fa-eye"></i>`;
+
+  mostrarPass() {
+    if (this.password) {
+      this.password = false;
+      this.eye = `<i class="fa-solid fa-eye-slash"></i>`;
+    } else {
+      this.password = true;
+      this.eye = `<i class="fa-solid fa-eye"></i>`;
+    }
+    // this.password = !this.password;
+  }
   constructor() {}
 
   ngOnInit(): void {}

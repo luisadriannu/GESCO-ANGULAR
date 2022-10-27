@@ -86,17 +86,20 @@
             required
           />
         </div>
+
         <div class="col">
           <input type="file" class="form-control" />
         </div>
 
-        <button
-          type="submit"
-          class="btn btn-lg btn-block my-4"
-          style="background-color: #4a001f; color: white"
-        >
-          Guardar <i class="fa-solid fa-floppy-disk"></i>
-        </button>
+        <div class="row mx-1">
+          <button type="submit" class="btn btn-lg btn-block my-4 btn-save">
+            Guardar <i class="fa-solid fa-floppy-disk"></i>
+          </button>
+
+          <button type="reset" class="btn btn-warning btn-lg btn-block">
+            Deshacer <i class="fa-solid fa-rotate-left"></i>
+          </button>
+        </div>
       </div>
     </form>
   </div>

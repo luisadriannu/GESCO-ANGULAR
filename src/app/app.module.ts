@@ -21,6 +21,7 @@ import { RegistroDirecComponent } from './funciones-admin/registro/registro-dire
 import { RegistroSubdirecComponent } from './funciones-admin/registro/registro-subdirec/registro-subdirec.component';
 import { RegistroDeptoComponent } from './funciones-admin/registro/registro-depto/registro-depto.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DocsAnualesComponent } from './funciones-menu/docs-anuales/docs-anuales.component';
 
 // Se usan para agregar caracteristicas extra 
 @NgModule({
@@ -43,6 +44,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     RegistroDirecComponent,
     RegistroSubdirecComponent,
     RegistroDeptoComponent,
+    DocsAnualesComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [],

@@ -1,25 +1,39 @@
 :root {
   --colorMain: #d3d3d3;
+  --colorFondo: #f8f8f8;
 }
 
-.container-login {
+.container-inputs {
   position: relative;
   margin: 10px;
-  border-radius: 10px;
-  width: 70%;
-  left: 15%;
+  border-radius: 8px;
   text-align: center;
+
+  /* -webkit-box-shadow: 0px 0px 45px -6px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 45px -6px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 45px -6px rgba(0, 0, 0, 0.75); */
+  -webkit-box-shadow: 0px 0px 141px -44px rgba(0, 0, 0, 0.83);
+  -moz-box-shadow: 0px 0px 141px -44px rgba(0, 0, 0, 0.83);
+  box-shadow: 0px 0px 141px -44px rgba(0, 0, 0, 0.83);
+  animation: transicion 1.1s ease-in-out;
 }
-.container-login hr {
-  width: 90%;
+@keyframes transicion {
+  from {
+    transform: translateX(45vh);
+    opacity: 0.1;
+  }
+  to {
+    transform: translateX(0);
+  }
 }
 .container-inputs {
   background-color: white;
-  border-radius: 10px;
-  padding: 25px;
-  width: 60%;
+  border-radius: 8px;
+  padding: 60px;
+  width: 50%;
   position: relative;
-  left: 18%;
+  left: 25%;
+  top: 100px;
 }
 #usuario {
   padding: 5px 0;
@@ -39,34 +53,49 @@
   border: none;
   border-bottom: 1px solid black;
 }
-.container-login .container-inputs .elemento input[type="submit"] {
-  margin: 15px;
-  padding: 15px;
-  border: none;
-  width: 50%;
-  background-color: #4a001f;
-  border-radius: 5px;
-  color: white;
-  cursor: pointer;
-}
-.container-login .container-inputs .elemento input[placeholder] {
-  color: white;
-}
+
 .container-login .container-inputs .elemento input[type="submit"]:hover {
   background-color: white;
   transition: 0.4s;
   border: 1px solid #4a001f;
   color: black;
 }
-
+.btn-sing {
+  text-align: center;
+  color: white;
+}
+.btn-sing:hover {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+}
 .footer {
   position: relative;
   text-align: center;
-  top: 45px;
+  top: 130px;
   width: 100%;
-  overflow: auto;
-  margin: auto;
 }
 .btn {
   background-color: #4a001f;
 }
+.title {
+  position: absolute;
+  top: 25px;
+  left: 41%;
+}
+
+/* .circle {
+  background-color: #4a001f;
+  width: 200px;
+  height: 200px;
+  margin: 20px;
+  position: fixed;
+  clip-path: circle(50% at top left);
+  transition-property: clip-path;
+  transition: 1s;
+  color: white;
+}
+
+.circle:hover {
+  clip-path: circle(150% at top left);
+} */

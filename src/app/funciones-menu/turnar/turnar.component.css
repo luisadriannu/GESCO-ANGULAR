@@ -2,3 +2,12 @@
   color: red;
   text-decoration: underline;
 }
+.btn-turnar {
+  background-color: #4a001f;
+  color: white;
+}
+.btn-turnar:hover {
+  border: 1px solid #4a001f;
+  background-color: white;
+  color: black;
+}

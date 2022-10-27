@@ -15,18 +15,20 @@ import { RegistroSubsecretComponent } from './funciones-admin/registro/registro-
 import { RegistroDirecComponent } from './funciones-admin/registro/registro-direc/registro-direc.component';
 import { RegistroSubdirecComponent } from './funciones-admin/registro/registro-subdirec/registro-subdirec.component';
 import { RegistroDeptoComponent } from './funciones-admin/registro/registro-depto/registro-depto.component';
+import { DocsAnualesComponent } from './funciones-menu/docs-anuales/docs-anuales.component';
 
 const routes: Routes = [
   // USUARIOS
   { path: 'login', component: LoginComponent },
   {
-    path: 'inicio/usuario',
+    path: 'inicio',
     component: InicioComponent,
   },
-  { path: 'turnar/usuario', component: TurnarComponent },
-  { path: 'generar/usuario', component: GenerarDocComponent },
-  { path: 'documentos/usuario', component: VerDocsComponent },
+  { path: 'turnar', component: TurnarComponent },
+  { path: 'generarDoc', component: GenerarDocComponent },
+  { path: 'verDocs', component: VerDocsComponent },
   { path: 'info/usuario', component: InfoComponent },
+  { path: 'docsAnuales', component: DocsAnualesComponent },
   // ADMIN
   { path: 'inicio/admin/registro-secret', component: RegistroSecretComponent },
   {

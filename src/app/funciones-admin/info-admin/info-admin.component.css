@@ -1,0 +1,10 @@
+.content-pass {
+  position: relative;
+}
+.verpass {
+  position: absolute;
+  top: 5px;
+  right: 3%;
+  border: none;
+  background-color: transparent;
+}

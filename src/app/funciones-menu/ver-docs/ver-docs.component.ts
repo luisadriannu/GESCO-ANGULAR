@@ -1,49 +1,23 @@
-import {
-  animate,
-  state,
-  style,
-  transition,
-  trigger,
-} from '@angular/animations';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ver-docs',
   templateUrl: './ver-docs.component.html',
   styleUrls: ['./ver-docs.component.css'],
-  animations: [
-    trigger('animacionRegistro', [
-      state(
-        'estado1',
-        style({
-          backgroundColor: 'red',
-        })
-      ),
-      state(
-        'estado2',
-        style({
-          backgroundColor: 'blue',
-        })
-      ),
-      transition('estado1 <=> estado2', animate(1000)),
-    ]),
-  ],
 })
 export class VerDocsComponent implements OnInit {
-  mostrarDocsAnuales = false;
-  mostrarDocs = true;
   editarDocs = false;
   // button exportar
   deshabilitado = true;
-  estadoCuadro = 'estado1';
 
-  mostrarDocsA() {
-    this.mostrarDocsAnuales = true;
-    this.mostrarDocs = false;
+  constructor(private router: Router, private elementRef: ElementRef) {}
+  docsAnuales() {
+    this.router.navigate(['docsAnuales']);
   }
+
   editar() {
     this.editarDocs = true;
-    this.estadoCuadro = this.estadoCuadro === 'estado1' ? 'estado2' : 'estado1';
   }
   cerrar() {
     this.editarDocs = false;
@@ -55,8 +29,6 @@ export class VerDocsComponent implements OnInit {
       alert('Se ha cancelado la exportacion');
     }
   }
-
-  constructor() {}
 
   ngOnInit(): void {}
 }

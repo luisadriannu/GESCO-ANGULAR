@@ -31,17 +31,24 @@
     </div>
 
     <div class="row">
-      <div class="col">
+      <div class="col content-pass">
         <input
           class="input"
-          type="password"
           class="form-control"
           value="736537837"
           placeholder="Contraseña"
           required
           maxlength="30"
           [disabled]="deshabilitado"
+          [type]="password ? 'password' : 'text'"
         />
+        <button
+          type="button"
+          class="verpass"
+          (click)="mostrarPass()"
+          [innerHTML]="eye"
+          [disabled]="deshabilitado"
+        ></button>
       </div>
       <div class="col">
         <input
@@ -57,7 +64,11 @@
 
     <div class="col my-4">
       <div class="row">
-        <button type="submit" class="btn btn-success btn-lg mx-1">
+        <button
+          type="submit"
+          class="btn btn-success btn-lg mx-1"
+          [disabled]="deshabilitado"
+        >
           Guardar
         </button>
       </div>

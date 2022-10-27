@@ -1,9 +1,9 @@
-.btn-save {
+.regresar {
   background-color: #4a001f;
   color: white;
 }
-.btn-save:hover {
-  border: 1px solid #4a001f;
+.regresar:hover {
   background-color: white;
+  border: 1px solid #4a001f;
   color: black;
 }

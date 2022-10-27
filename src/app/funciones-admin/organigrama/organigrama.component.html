@@ -2,11 +2,7 @@
 <!-- ********** Editar usuario **********-->
 <div *ngIf="editUsuario">
   <div class="container col-md-4 registro-flotante">
-    <button
-      (click)="cerrar()"
-      class="btn btn-sm btn-block my-4 btn-cerrar"
-      style="background-color: #4a001f; color: white"
-    >
+    <button (click)="cerrar()" class="btn btn-sm btn-block my-4 btn-cerrar">
       <i class="fa-solid fa-xmark"></i>
     </button>
 
@@ -64,11 +60,7 @@
       <br />
 
       <div class="row">
-        <button
-          type="submit"
-          class="btn btn-lg btn-block my-4"
-          style="background-color: #4a001f; color: white"
-        >
+        <button type="submit" class="btn btn-lg btn-block my-4 btn-save">
           Guardar cambios <i class="fa-solid fa-floppy-disk"></i>
         </button>
       </div>

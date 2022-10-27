@@ -13,6 +13,11 @@
   font-weight: bold;
 }
 
+#circulo:hover {
+  transition: 0.5s ease;
+  background-color: white;
+  color: black;
+}
 .contenedor-inicio {
   text-align: center;
 }

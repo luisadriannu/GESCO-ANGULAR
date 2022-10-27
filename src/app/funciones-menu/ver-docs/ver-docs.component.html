@@ -1,70 +1,64 @@
-
 <!-- ********** Editar oficio **********-->
-  <div class="container col-md-4 registro-flotante" *ngIf="editarDocs" [@animacionRegistro]="estadoCuadro">
-    <button
-      (click)="cerrar()"
-      class="btn btn-sm btn-block my-4 btn-cerrar"
-      style="background-color: #4a001f; color: white"
-    >
-      <i class="fa-solid fa-xmark"></i>
-    </button>
+<div class="container col-md-4 registro-flotante animation" *ngIf="editarDocs">
+  <button
+    (click)="cerrar()"
+    class="btn btn-sm btn-block my-4 btn-cerrar"
+    id="btn-cerrar"
+  >
+    <i class="fa-solid fa-xmark"></i>
+  </button>
 
-    <!-- ********** Editar oficio **********-->
-    <h2 class="title-inicio" style="text-align: center">
-      Editar el oficio (no. oficio)
-    </h2>
-    <form action="editar-oficio">
-      <br />
-      <div class="col">
-        <label for="tipo-oficio">Tipo de oficio:</label>
-        <select name="tipo-oficio" class="form-control" required>
-          
-          <option value="#" >Selecciona el tipo de oficio:</option>
-          <option value="internos">Internos</option>
-          <option value="externos">Externos</option>
-          <option value="circulares">Circulares</option>
-        </select>
-      </div>
-      <br />
-      <div class="col">
-        <label for="titular">Titular:</label>
-        <input
-          name="titular"
-          type="text"
-          class="form-control"
-          value="Nombre del titular"
-          maxlength="50"
-          required
-        />
-      </div>
+  <!-- ********** Editar oficio **********-->
+  <h2 class="title-inicio" style="text-align: center">
+    Editar el oficio (no. oficio)
+  </h2>
+  <form action="editar-oficio">
+    <br />
+    <div class="col">
+      <label for="tipo-oficio">Tipo de oficio:</label>
+      <select name="tipo-oficio" class="form-control" required>
+        <option value="#">Selecciona el tipo de oficio:</option>
+        <option value="internos">Internos</option>
+        <option value="externos">Externos</option>
+        <option value="circulares">Circulares</option>
+      </select>
+    </div>
+    <br />
+    <div class="col">
+      <label for="titular">Titular:</label>
+      <input
+        name="titular"
+        type="text"
+        class="form-control"
+        value="Nombre del titular"
+        maxlength="50"
+        required
+      />
+    </div>
 
-      <br />
-      <div class="col">
-        <label for="dependencia">Dependencia:</label>
-        <input
-          name="dependencia"
-          type="text"
-          class="form-control"
-          value="Nombre de la dependencia"
-          maxlength="40"
-          required
-        />
-      </div>
-      <br />
+    <br />
+    <div class="col">
+      <label for="dependencia">Dependencia:</label>
+      <input
+        name="dependencia"
+        type="text"
+        class="form-control"
+        value="Nombre de la dependencia"
+        maxlength="40"
+        required
+      />
+    </div>
+    <br />
 
-      <div class="row">
-        <button
-          type="submit"
-          class="btn btn-lg btn-block my-4"
-          style="background-color: #4a001f; color: white"
-        >
-          Guardar cambios <i class="fa-solid fa-floppy-disk"></i>
-        </button>
-      </div>
-    </form>
-  </div>
+    <div class="row">
+      <button type="submit" class="btn btn-lg btn-block my-4 btn-save">
+        Guardar cambios <i class="fa-solid fa-floppy-disk"></i>
+      </button>
+    </div>
+  </form>
+</div>
 <!-- *************** VER DOCS ***************-->
-<div *ngIf="mostrarDocs">
+<div>
   <div class="container my-4">
     <section id="container-ver-docs">
       <div class="container-ver-docs">
@@ -175,10 +169,21 @@
 
         <br />
 
-        <!-- editar flotante -->
-        
-        <form action="exportar-docs">
-          <div class="form-check">
+        <div>
+          <form>
+            <!-- exportar -->
+            <button
+              class="btn btn-success btn-md"
+              type="submit"
+              (click)="exportar()"
+              [disabled]="deshabilitado"
+            >
+              Exportar documentacion
+            </button>
+          </form>
+        </div>
+        <div style="position: relative">
+          <div class="confirm">
             <input
               (change)="deshabilitado = !deshabilitado"
               class="form-check-input"
@@ -186,39 +191,25 @@
               value="exportar"
               id="flexCheckDefault"
             />
-            <label class="form-check-label" for="flexCheckDefault"
+            <label class="form-check-label mx-2" for="flexCheckDefault"
               >Exportar
             </label>
-
-            <!-- exportar -->
-            <button
-              class="btn btn-success mx-2"
-              type="submit"
-              (click)="exportar()"
-              [disabled]="deshabilitado"
-            >
-              Exportar documentacion
-            </button>
           </div>
-        </form>
-        <br />
-        <!-- Botones editar y borrar -->
+        </div>
 
         <br />
-        <button
-          (click)="mostrarDocsA()"
-          class="btn btn btn-md"
-          style="background-color: #4a001f; color: white"
-        >
-          Ver documentos anuales
+
+        <button class="btn btn btn-md btn-docs" (click)="docsAnuales()">
+          Ver documentos anuales <i class="fa-solid fa-folder"></i>
         </button>
       </div>
     </section>
   </div>
-
   <br />
-  <hr />
-
+  <div class="container">
+    <hr />
+  </div>
+  <br />
   <div class="container">
     <section id="container-ver-docs">
       <div class="container-ver-docs">
@@ -270,65 +261,4 @@
       </div>
     </section>
   </div>
-</div>
-<!-- *************** VER DOCS ANUALES ***************-->
-
-<div class="container" *ngIf="mostrarDocsAnuales">
-  <div class="input-group rounded">
-    <input
-      type="search"
-      class="form-control rounded"
-      placeholder="Buscar"
-      aria-label="Search"
-      aria-describedby="search-addon"
-    />
-    <span class="input-group-text border-0" id="search-addon">
-      <i class="fas fa-search"></i>
-    </span>
-  </div>
-
-  <div class="container my-4">
-    <h3>Documentaciones guardadas por año</h3>
-  </div>
-  <table class="table table-light my-4">
-    <thead>
-      <tr>
-        <th scope="col">No. Oficio</th>
-        <th scope="col">Tipo de oficio</th>
-        <th scope="col">Titular</th>
-        <th scope="col">Dependencia</th>
-        <th scope="col">Documento</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Circular</td>
-        <td>Ing. Mariana Juarez</td>
-        <td>Departamento Servicios</td>
-        <td>documento1.pdf</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Circular</td>
-        <td>Ing. Mariana Juarez</td>
-        <td>Departamento Servicios</td>
-        <td>documento1.pdf</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Circular</td>
-        <td>Ing. Mariana Juarez</td>
-        <td>Departamento Servicios</td>
-        <td>documento1.pdf</td>
-      </tr>
-      <tr>
-        <th scope="row">4</th>
-        <td>Circular</td>
-        <td>Ing. Mariana Juarez</td>
-        <td>Departamento Servicios</td>
-        <td>documento1.pdf</td>
-      </tr>
-    </tbody>
-  </table>
 </div>

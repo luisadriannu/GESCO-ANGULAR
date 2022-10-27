@@ -13,8 +13,10 @@ export class TurnarComponent implements OnInit {
   mostrarDirec = false;
   mostrarSubdirec = false;
   mostrarDeptos = false;
-  texto = '(Seleccione un departamento)';
+  texto = 'Seleccione un departamento';
   complemento = '';
+  confirm = true;
+  textoOficio = 'Seleccione el tipo de oficio';
   mostrarSecretSelect() {
     this.mostrarSecret = true;
     this.texto = 'Secretaría';
@@ -42,6 +44,11 @@ export class TurnarComponent implements OnInit {
   }
   selectOption() {
     this.mostrar = true;
+    this.textoOficio = 'Tipo de oficio a enviar:';
+  }
+
+  confirmar() {
+    this.confirm = !this.confirm;
   }
   constructor() {}
 
