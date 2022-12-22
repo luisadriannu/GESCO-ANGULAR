@@ -1,61 +1,62 @@
 <!-- ********** Editar oficio **********-->
-<div class="container col-md-4 registro-flotante animation" *ngIf="editarDocs">
-  <button
-    (click)="cerrar()"
-    class="btn btn-sm btn-block my-4 btn-cerrar"
-    id="btn-cerrar"
-  >
-    <i class="fa-solid fa-xmark"></i>
-  </button>
+<div class="modal-window" *ngIf="editarDocs">
+  <div class="container col-md-4 registro-flotante animation">
+    <button
+      (click)="cerrar()"
+      class="btn btn-sm btn-block my-4 btn-cerrar"
+      id="btn-cerrar"
+    >
+      <i class="fa-solid fa-xmark"></i>
+    </button>
 
-  <!-- ********** Editar oficio **********-->
-  <h2 class="title-inicio" style="text-align: center">
-    Editar el oficio (no. oficio)
-  </h2>
-  <form action="editar-oficio">
-    <br />
-    <div class="col">
-      <label for="tipo-oficio">Tipo de oficio:</label>
-      <select name="tipo-oficio" class="form-control" required>
-        <option value="#">Selecciona el tipo de oficio:</option>
-        <option value="internos">Internos</option>
-        <option value="externos">Externos</option>
-        <option value="circulares">Circulares</option>
-      </select>
-    </div>
-    <br />
-    <div class="col">
-      <label for="titular">Titular:</label>
-      <input
-        name="titular"
-        type="text"
-        class="form-control"
-        value="Nombre del titular"
-        maxlength="50"
-        required
-      />
-    </div>
+    <h3 class="title-inicio" style="text-align: center">
+      Editar el oficio (no. oficio)
+    </h3>
+    <form action="editar-oficio">
+      <br />
+      <div class="col">
+        <label for="tipo-oficio">Tipo de oficio:</label>
+        <select name="tipo-oficio" class="form-control" required>
+          <option value="#">Selecciona el tipo de oficio:</option>
+          <option value="internos">Internos</option>
+          <option value="externos">Externos</option>
+          <option value="circulares">Circulares</option>
+        </select>
+      </div>
+      <br />
+      <div class="col">
+        <label for="titular">Titular:</label>
+        <input
+          name="titular"
+          type="text"
+          class="form-control"
+          placeholder="Nombre del titular"
+          maxlength="50"
+          required
+        />
+      </div>
 
-    <br />
-    <div class="col">
-      <label for="dependencia">Dependencia:</label>
-      <input
-        name="dependencia"
-        type="text"
-        class="form-control"
-        value="Nombre de la dependencia"
-        maxlength="40"
-        required
-      />
-    </div>
-    <br />
+      <br />
+      <div class="col">
+        <label for="dependencia">Dependencia:</label>
+        <input
+          name="dependencia"
+          type="text"
+          class="form-control"
+          placeholder="Nombre de la dependencia"
+          maxlength="40"
+          required
+        />
+      </div>
+      <br />
 
-    <div class="row">
-      <button type="submit" class="btn btn-lg btn-block my-4 btn-save">
-        Guardar cambios <i class="fa-solid fa-floppy-disk"></i>
-      </button>
-    </div>
-  </form>
+      <div class="row">
+        <button type="submit" class="btn btn-lg btn-block my-4 btn-save">
+          Guardar cambios <i class="fa-solid fa-floppy-disk"></i>
+        </button>
+      </div>
+    </form>
+  </div>
 </div>
 <!-- *************** VER DOCS ***************-->
 <div>

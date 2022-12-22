@@ -7,7 +7,6 @@ import {} from '@angular/core';
   styleUrls: ['./secret-particular.component.css'],
 })
 export class SecretParticularComponent implements OnInit {
-  select() {}
   constructor() {}
 
   ngOnInit(): void {}

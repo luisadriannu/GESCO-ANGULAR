@@ -2,10 +2,20 @@ button {
   overflow: auto;
   margin: auto;
 }
+.modal-window {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0008;
+  z-index: 998;
+}
 .registro-flotante {
   position: fixed;
-  left: 34%;
-  top: 18%;
   z-index: 999;
   background-color: #f8f9fa;
   border-radius: 10px;
@@ -13,29 +23,38 @@ button {
   -webkit-box-shadow: 0px 0px 45px -6px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 0px 45px -6px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 0px 45px -6px rgba(0, 0, 0, 0.75);
+}
+.registro-flotante h2 {
+  text-align: center;
+}
+.animation {
   animation: transicion 0.6s ease;
 }
+
 @keyframes transicion {
   from {
-    transform: translateY(50vh);
+    transform: translateZ(100%);
     opacity: 0.1;
   }
   to {
-    transform: translateX(0);
+    transform: translateZ(0);
   }
 }
 .btn-cerrar {
   background-color: #4a001f;
   color: white;
-  float: right;
   position: absolute;
-  right: 8px;
+  right: 15px;
   top: 0;
+  transition: background-color 300ms linear, transform 300ms ease-in-out;
+  font-size: 16px;
 }
 .btn-cerrar:hover {
   background-color: red;
   color: white;
   transition: 0.5s ease;
+  font-size: 16px;
+  transform: scale(1.2);
 }
 
 .btn-save {

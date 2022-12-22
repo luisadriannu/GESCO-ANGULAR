@@ -7,3 +7,22 @@
   background-color: white;
   color: black;
 }
+.capsule {
+  animation: revelar 0.5s ease-out;
+}
+
+@keyframes revelar {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 400px) {
+  .capsule h3 {
+    text-align: center;
+  }
+}

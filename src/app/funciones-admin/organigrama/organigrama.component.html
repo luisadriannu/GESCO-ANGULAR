@@ -1,16 +1,15 @@
 <!-- ORGANIGRAMA -->
 <!-- ********** Editar usuario **********-->
-<div *ngIf="editUsuario">
-  <div class="container col-md-4 registro-flotante">
+<div class="modal-window" *ngIf="editUsuario">
+  <div class="container col-md-4 registro-flotante animation">
     <button (click)="cerrar()" class="btn btn-sm btn-block my-4 btn-cerrar">
       <i class="fa-solid fa-xmark"></i>
     </button>
 
-    <!-- ********** Editar usuario **********-->
     <h2 class="title-inicio" style="text-align: center">
       Editar el usuario: (usuario)
     </h2>
-    <form action="edit-usuario-org">
+    <form>
       <br />
       <label for="nombre-depto">Nombre del departamento:</label>
       <div class="col">
@@ -18,8 +17,9 @@
           name="nombre-depto"
           type="text"
           class="form-control"
-          value="Datos del usuario nombre del depto"
+          placeholder="Datos del usuario nombre del depto"
           maxlength="50"
+          required
         />
       </div>
       <br />
@@ -29,8 +29,9 @@
           name="nombre-encargado"
           type="text"
           class="form-control"
-          value="Datos del usuario nombre del responsable"
+          placeholder="Datos del usuario nombre del responsable"
           maxlength="50"
+          required
         />
       </div>
 
@@ -41,8 +42,9 @@
           name="correo"
           type="text"
           class="form-control"
-          value="Datos del usuario correo electronico"
+          placeholder="Datos del usuario correo electronico"
           maxlength="40"
+          required
         />
       </div>
 
@@ -53,8 +55,9 @@
           name="password"
           type="text"
           class="form-control"
-          value="Datos del usuario contraseña"
+          placeholder="Datos del usuario contraseña"
           maxlength="20"
+          required
         />
       </div>
       <br />

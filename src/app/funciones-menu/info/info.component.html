@@ -1,5 +1,5 @@
 <!-- *************** INFORMACION ***************-->
-<div class="container" style="text-align: center">
+<div class="container content" style="text-align: center">
   <h2>(Usuario)</h2>
 
   <form name="info-depto">
@@ -44,7 +44,6 @@
           [type]="password ? 'password' : 'text'"
         />
         <!-- ver pass -->
-
         <button
           type="button"
           class="verpass"
@@ -66,10 +65,10 @@
     </div>
 
     <div class="col my-4">
-      <div class="row">
+      <div class="row content-button-save">
         <button
           type="submit"
-          class="btn btn-success btn-lg mx-1"
+          class="btn btn-save-info btn-lg mx-1"
           [disabled]="deshabilitado"
         >
           Guardar
